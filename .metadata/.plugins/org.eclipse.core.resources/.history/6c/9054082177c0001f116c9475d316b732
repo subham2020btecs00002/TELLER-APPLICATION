@@ -1,0 +1,22 @@
+package com.example.bankingApp.service;
+
+
+import com.example.bankingApp.entity.Account;
+import com.example.bankingApp.repository.AccountRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+@Service
+public class AccountService {
+
+    @Autowired
+    private AccountRepository repository;
+
+    public Account createAccount(Account account) {
+        return repository.save(account);
+    }
+
+    public Account getAccountDetails(String accountNumber) {
+        return repository.findByAccountNumber(accountNumber);
+    }
+}

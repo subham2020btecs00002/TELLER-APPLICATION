@@ -1,0 +1,34 @@
+package com.example.bank.controller;
+import com.example.bank.dto.TransactionRequest;
+import com.example.bank.service.TransactionService;
+import lombok.RequiredArgsConstructor;
+import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.web.bind.annotation.*;
+
+@RestController
+@RequestMapping("/api/transactions")
+@RequiredArgsConstructor
+public class TransactionController {
+
+    private final TransactionService transactionService;
+
+    @PostMapping("/deposit")
+    public ResponseEntity<String> deposit(@RequestBody TransactionRequest request) {
+        transactionService.deposit(request);
+        return ResponseEntity.ok("Deposit successful!");
+    }
+
+    @PostMapping("/withdraw")
+    public ResponseEntity<String> withdraw(@RequestBody TransactionRequest request) {
+        transactionService.withdraw(request);
+        return ResponseEntity.ok("Withdrawal successful!");
+    }
+
+    @GetMapping("/authorize")
+    @PreAuthorize("hasAuthority('ROLE_AUTHORIZER')")
+    public ResponseEntity<String> authorizeTransaction(@RequestParam Long transactionId) {
+        transactionService.authorizeTransaction(transactionId);
+        return ResponseEntity.ok("Transaction authorized!");
+    }
+}

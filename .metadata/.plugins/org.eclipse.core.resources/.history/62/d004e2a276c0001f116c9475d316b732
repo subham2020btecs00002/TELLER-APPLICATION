@@ -1,0 +1,39 @@
+package com.example.bankingApp.controller;
+
+
+import com.example.bankingApp.entity.Transaction;
+import com.example.bankingApp.entity.TransactionRequest;
+import com.example.bankingApp.service.TransactionService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
+
+@RestController
+@RequestMapping("/transactions")
+public class TransactionController {
+
+    @Autowired
+    private TransactionService service;
+
+    @PostMapping("/initiate")
+    @PreAuthorize("hasAuthority('ROLE_MAKER')")
+    public Transaction initiateTransaction(@RequestBody TransactionRequest request) {
+        return service.initiateTransaction(new Transaction(
+                0, request.getAccountNumber(), request.getCustomerId(), request.getAmount(),
+                null, null, null));
+    }
+
+    @GetMapping("/pending")
+    @PreAuthorize("hasAuthority('ROLE_CHECKER')")
+    public List<Transaction> getPendingTransactions() {
+        return service.getPendingTransactions();
+    }
+
+    @PostMapping("/approve/{id}")
+    @PreAuthorize("hasAuthority('ROLE_AUTHORIZER')")
+    public Transaction approveTransaction(@PathVariable int id, @RequestParam String approver) {
+        return service.approveTransaction(id, approver);
+    }
+}

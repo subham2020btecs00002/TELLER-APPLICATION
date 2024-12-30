@@ -1,0 +1,22 @@
+package com.example.bank.service;
+
+import com.example.bank.model.Transaction;
+import com.example.bank.repository.TransactionRepository;
+import lombok.RequiredArgsConstructor;
+import org.springframework.stereotype.Service;
+
+import java.util.List;
+
+@Service
+@RequiredArgsConstructor
+public class TransactionService {
+    private final TransactionRepository transactionRepository;
+
+    public Transaction createTransaction(Transaction transaction) {
+        return transactionRepository.save(transaction);
+    }
+
+    public List<Transaction> getTransactionsByAccountId(Long accountId) {
+        return transactionRepository.findByAccountAccountId(accountId);
+    }
+}

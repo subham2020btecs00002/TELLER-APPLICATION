@@ -1,0 +1,18 @@
+package com.example.bankingApp.service;
+
+
+import com.example.bankingApp.entity.Customer;
+import com.example.bankingApp.repository.CustomerRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+@Service
+public class CustomerService {
+
+    @Autowired
+    private CustomerRepository repository;
+
+    public Customer createCustomer(Customer customer) {
+        return repository.save(customer);
+    }
+}

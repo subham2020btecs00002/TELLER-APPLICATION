@@ -1,0 +1,50 @@
+package com.example.bank.controller;
+import com.example.bank.model.Transaction;
+import com.example.bank.service.TransactionService;
+import lombok.RequiredArgsConstructor;
+import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.web.bind.annotation.*;
+import java.util.List;
+
+@RestController
+@RequestMapping("/api/transactions")
+@RequiredArgsConstructor
+public class TransactionController {
+    private final TransactionService transactionService;
+
+    @PostMapping("/approve")
+    @PreAuthorize("hasAuthority('ROLE_AUTHORIZER')")
+    public ResponseEntity<String> approveTransaction(@RequestBody Transaction transaction) {
+        // Logic for approving transactions above $1000
+        if (transaction.getAmount() > 1000) {
+            return ResponseEntity.ok("Transaction approved by authorizer");
+        }
+        return ResponseEntity.badRequest().body("Transaction amount must exceed $1000 for approval");
+    }
+    @PostMapping
+    public ResponseEntity<TransactionDTO> createTransaction(@RequestBody Transaction transaction) {
+        Transaction createdTransaction = transactionService.createTransaction(transaction);
+        TransactionDTO transactionDTO = new TransactionDTO(
+                createdTransaction.getTransactionId(),
+                createdTransaction.getAmount(),
+                createdTransaction.getType(),
+                createdTransaction.getAccount().getAccountId()
+        );
+        return ResponseEntity.ok(transactionDTO);
+    }
+
+    @GetMapping("/account/{accountId}")
+    public ResponseEntity<List<TransactionDTO>> getTransactionsByAccountId(@PathVariable Long accountId) {
+        List<Transaction> transactions = transactionService.getTransactionsByAccountId(accountId);
+        List<TransactionDTO> transactionDTOs = transactions.stream()
+                .map(transaction -> new TransactionDTO(
+                        transaction.getTransactionId(),
+                        transaction.getAmount(),
+                        transaction.getType(),
+                        transaction.getAccount().getAccountId()))
+                .collect(Collectors.toList());
+        return ResponseEntity.ok(transactionDTOs);
+    }
+
+}

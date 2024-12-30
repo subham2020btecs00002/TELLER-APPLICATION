@@ -1,0 +1,52 @@
+package com.example.bank.service;
+
+import com.example.bank.model.Account;
+import com.example.bank.model.Transaction;
+import com.example.bank.repository.AccountRepository;
+import com.example.bank.repository.TransactionRepository;
+import lombok.RequiredArgsConstructor;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+import java.util.List;
+
+@Service
+@RequiredArgsConstructor
+public class TransactionService {
+    private final TransactionRepository transactionRepository;
+    private final AccountRepository accountRepository;
+
+    @Transactional
+    public Transaction createTransaction(Transaction transaction, boolean adjustBalance) {
+        Account account = accountRepository.findById(transaction.getAccount().getAccountId())
+                .orElseThrow(() -> new RuntimeException("Account not found"));
+
+        // Check for critical transaction
+        if ("WITHDRAWAL".equalsIgnoreCase(transaction.getType()) && transaction.getAmount() > 1000) {
+            transaction.setStatus("PENDING"); // Mark as pending
+            return transactionRepository.save(transaction);
+        }
+
+        // Handle normal transactions
+        if (adjustBalance) {
+            if ("DEPOSIT".equalsIgnoreCase(transaction.getType())) {
+                account.setClosingBalance(account.getClosingBalance() + transaction.getAmount());
+            } else if ("WITHDRAWAL".equalsIgnoreCase(transaction.getType())) {
+                if (account.getClosingBalance() < transaction.getAmount()) {
+                    throw new RuntimeException("Insufficient balance");
+                }
+                account.setClosingBalance(account.getClosingBalance() - transaction.getAmount());
+            } else {
+                throw new RuntimeException("Invalid transaction type");
+            }
+            accountRepository.save(account);
+        }
+
+        transaction.setStatus("APPROVED"); // Auto-approve normal transactions
+        return transactionRepository.save(transaction);
+    }
+
+    public List<Transaction> getTransactionsByAccountId(Long accountId) {
+        return transactionRepository.findByAccountAccountId(accountId);
+    }
+}

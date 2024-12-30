@@ -1,0 +1,10 @@
+package com.example.bank.dto;
+
+import lombok.Data;
+
+@Data
+public class AccountRequest {
+    private String accountNumber;
+    private double openingBalance;
+    private Long customerId;
+}

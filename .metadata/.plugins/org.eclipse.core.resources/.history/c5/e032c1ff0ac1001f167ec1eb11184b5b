@@ -1,0 +1,28 @@
+package com.example.bank.model;
+
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
+import jakarta.persistence.*;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
+@NoArgsConstructor
+@Entity
+public class Transaction {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "transaction_id") // Matches database schema
+    private Long transactionId;
+
+    @Column(nullable = false)
+    private double amount;
+
+    @Column(nullable = false)
+    private String type; // "DEPOSIT" or "WITHDRAWAL"
+
+    @ManyToOne
+    @JoinColumn(name = "account_id", nullable = false) // Matches foreign key in schema
+    @JsonManagedReference
+    private Account account;
+}

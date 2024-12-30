@@ -1,0 +1,41 @@
+package com.example.bank.service;
+
+import com.example.bank.model.Account;
+import com.example.bank.model.Customer;
+import com.example.bank.repository.AccountRepository;
+import com.example.bank.repository.CustomerRepository;
+
+import lombok.RequiredArgsConstructor;
+import org.springframework.stereotype.Service;
+
+import java.util.List;
+import java.util.Optional;
+
+@Service
+@RequiredArgsConstructor
+public class AccountService {
+
+    public List<Account> getAccountsByCustomerId(Long customerId) {
+        return accountRepository.findByCustomerCustomerId(customerId);
+    }
+    private final AccountRepository accountRepository;
+    private final CustomerRepository customerRepository; // Add this repository
+
+    public Account createAccount(Account account) {
+        // Validate the customer
+        Long customerId = account.getCustomer().getCustomerId();
+        Customer customer = customerRepository.findById(customerId)
+            .orElseThrow(() -> new RuntimeException("Customer not found"));
+
+        account.setCustomer(customer); // Associate the customer
+        return accountRepository.save(account);
+    }
+
+    public Account getAccountById(Long accountId) {
+        return accountRepository.findById(accountId).orElseThrow(() -> new RuntimeException("Account not found"));
+    }
+    public Optional<Account> getAccountByAccountNumber(String accountNumber) {
+        return accountRepository.findByAccountNumber(accountNumber);
+    }
+
+}

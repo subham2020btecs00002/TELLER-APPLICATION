@@ -1,0 +1,87 @@
+package com.example.bank.config;
+
+import com.example.bank.util.JwtUtil;
+import jakarta.servlet.FilterChain;
+import jakarta.servlet.ServletException;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+import lombok.RequiredArgsConstructor;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.http.HttpMethod;
+import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
+import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.AuthenticationException;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
+import org.springframework.security.web.AuthenticationEntryPoint;
+import org.springframework.security.web.SecurityFilterChain;
+import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
+
+import java.io.IOException;
+import java.util.stream.Collectors;
+
+@Configuration
+@RequiredArgsConstructor
+public class SecurityConfig {
+
+    private final JwtUtil jwtUtil;
+
+    @Bean
+    public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
+        return http.csrf().disable()
+                .authorizeHttpRequests(auth -> auth
+                        .requestMatchers(HttpMethod.POST, "/api/customers").hasAuthority("ROLE_MAKER")
+                        .requestMatchers(HttpMethod.POST, "/api/accounts").hasAuthority("ROLE_MAKER")
+                        .requestMatchers(HttpMethod.GET, "/api/accounts/customer/**").hasAnyAuthority("ROLE_MAKER", "ROLE_CHECKER")
+                        .requestMatchers(HttpMethod.POST, "/api/transactions/approve").hasAuthority("ROLE_AUTHORIZER")
+                        .anyRequest().authenticated()
+                )
+                .addFilterBefore(new JwtAuthorizationFilter(jwtUtil), UsernamePasswordAuthenticationFilter.class)
+                .exceptionHandling().authenticationEntryPoint(new CustomAuthenticationEntryPoint())
+                .build();
+    }
+
+    @Bean
+    public AuthenticationManager authManager(HttpSecurity http) throws Exception {
+        return http.getSharedObject(AuthenticationManagerBuilder.class).build();
+    }
+
+    private static class JwtAuthorizationFilter extends UsernamePasswordAuthenticationFilter {
+        private final JwtUtil jwtUtil;
+
+        public JwtAuthorizationFilter(JwtUtil jwtUtil) {
+            this.jwtUtil = jwtUtil;
+        }
+
+        @Override
+        protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain chain)
+                throws IOException, ServletException {
+            String authorizationHeader = request.getHeader("Authorization");
+            if (authorizationHeader != null && authorizationHeader.startsWith("Bearer ")) {
+                String token = authorizationHeader.substring(7);
+                String role = jwtUtil.extractRole(token);
+
+                Authentication authentication = new UsernamePasswordAuthenticationToken(
+                        null,
+                        null,
+                        role != null ? role.chars()
+                                .mapToObj(c -> new SimpleGrantedAuthority(String.valueOf((char) c)))
+                                .collect(Collectors.toList()) : null);
+
+                SecurityContextHolder.getContext().setAuthentication(authentication);
+            }
+            chain.doFilter(request, response);
+        }
+    }
+
+    private static class CustomAuthenticationEntryPoint implements AuthenticationEntryPoint {
+        @Override
+        public void commence(HttpServletRequest request, HttpServletResponse response, AuthenticationException authException)
+                throws IOException {
+            response.sendError(HttpServletResponse.SC_UNAUTHORIZED, "Unauthorized");
+        }
+    }
+}

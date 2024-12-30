@@ -1,0 +1,29 @@
+server:
+  port: 8083  # Set the server port to 8088
+
+spring:
+  application:
+    name: gateway  # Set the application name
+
+  cloud:
+    gateway:
+      routes:
+        - id: springboot3-security-service
+          uri: lb://SPRINGBOOT3-SECURITY
+          predicates:
+            - Path=/auth/**
+        - id: bank-service
+          uri: lb://BANK
+          predicates:
+            - Path=/api/accounts/**
+            - Path=/api/customers/**
+            - Path=/api/transactions/**
+
+eureka:
+  client:
+    register-with-eureka: true  # Register this service with Eureka
+    fetch-registry: true         # Fetch the registry of services from Eureka
+    service-url:
+      defaultZone: http://localhost:8761/eureka/  # Eureka server URL
+  instance:
+    prefer-ip-address: true      # Prefer IP address for the instance

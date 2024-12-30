@@ -1,0 +1,5 @@
+package com.example.bankingApp.dto;
+
+public class CustomerRequest {
+
+}

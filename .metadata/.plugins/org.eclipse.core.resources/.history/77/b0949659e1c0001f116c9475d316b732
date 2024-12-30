@@ -1,0 +1,29 @@
+package com.example.bank.controller;
+
+import com.example.bank.entity.Account;
+
+import com.example.bank.dto.AccountRequest;
+import com.example.bank.entity.Account;
+import com.example.bank.service.AccountService;
+import lombok.RequiredArgsConstructor;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+
+@RestController
+@RequestMapping("/api/accounts")
+@RequiredArgsConstructor
+public class AccountController {
+
+    private final AccountService accountService;
+
+    @PostMapping
+    public ResponseEntity<String> createAccount(@RequestBody AccountRequest request) {
+        accountService.createAccount(request);
+        return ResponseEntity.ok("Account created successfully!");
+    }
+
+    @GetMapping("/{accountId}")
+    public ResponseEntity<Account> getAccountDetails(@PathVariable Long accountId) {
+        return ResponseEntity.ok(accountService.getAccountDetails(accountId));
+    }
+}

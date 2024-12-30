@@ -1,0 +1,26 @@
+package com.example.bank.service;
+
+import com.example.bank.dto.CustomerRequest;
+import com.example.bank.entity.Customer;
+import com.example.bank.repository.CustomerRepository;
+import lombok.RequiredArgsConstructor;
+import org.springframework.stereotype.Service;
+
+@Service
+@RequiredArgsConstructor
+public class CustomerService {
+
+    private final CustomerRepository customerRepository;
+
+    public void createCustomer(CustomerRequest request) {
+        Customer customer = new Customer();
+        customer.setName(request.getName());
+        customer.setEmail(request.getEmail());
+        customerRepository.save(customer);
+    }
+
+    public Customer getCustomerDetails(Long customerId) {
+        return customerRepository.findById(customerId)
+                .orElseThrow(() -> new RuntimeException("Customer not found"));
+    }
+}

@@ -1,0 +1,64 @@
+package com.example.bank.controller;
+
+import com.example.bank.model.Transaction;
+import com.example.bank.service.TransactionService;
+import lombok.RequiredArgsConstructor;
+import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.web.bind.annotation.*;
+
+@RestController
+@RequestMapping("/api/transactions")
+@RequiredArgsConstructor
+public class TransactionController {
+    private final TransactionService transactionService;
+
+    // Deposit API
+    @PostMapping("/deposit")
+    public ResponseEntity<String> deposit(@RequestBody Transaction transaction) {
+        // Logic for deposit
+        if (transaction.getAmount() <= 0) {
+            return ResponseEntity.badRequest().body("Amount must be greater than zero");
+        }
+        transaction.setType("DEPOSIT");
+        transactionService.createTransaction(transaction);
+        return ResponseEntity.ok("Deposit successful");
+    }
+
+    // Withdrawal API
+    @PostMapping("/withdrawal")
+    @PreAuthorize("hasAuthority('ROLE_MAKER')")
+    public ResponseEntity<String> withdrawal(@RequestBody Transaction transaction) {
+        // Logic for withdrawal
+        if (transaction.getAmount() <= 0) {
+            return ResponseEntity.badRequest().body("Amount must be greater than zero");
+        }
+
+        // If the withdrawal is over $1000, it requires authorizer approval
+        if (transaction.getAmount() > 1000) {
+            return ResponseEntity.status(403).body("Approval required for withdrawals over $1000");
+        }
+
+        transaction.setType("WITHDRAWAL");
+        transactionService.createTransaction(transaction);
+        return ResponseEntity.ok("Withdrawal successful");
+    }
+
+    // Authorizer approves withdrawals over $1000
+    @PostMapping("/approve-withdrawal")
+    @PreAuthorize("hasAuthority('ROLE_AUTHORIZER')")
+    public ResponseEntity<String> approveWithdrawal(@RequestBody Transaction transaction) {
+        // Check if the transaction is a withdrawal
+        if (!"WITHDRAWAL".equals(transaction.getType())) {
+            return ResponseEntity.badRequest().body("Transaction type must be withdrawal");
+        }
+
+        if (transaction.getAmount() <= 1000) {
+            return ResponseEntity.badRequest().body("No approval needed for withdrawals under $1000");
+        }
+
+        // Proceed with withdrawal approval
+        transactionService.createTransaction(transaction);
+        return ResponseEntity.ok("Withdrawal approved and processed");
+    }
+}

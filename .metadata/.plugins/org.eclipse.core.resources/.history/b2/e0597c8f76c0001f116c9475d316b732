@@ -1,0 +1,28 @@
+package com.example.bankingApp.controller;
+
+
+import com.example.bankingApp.entity.Account;
+import com.example.bankingApp.service.AccountService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.web.bind.annotation.*;
+
+@RestController
+@RequestMapping("/accounts")
+public class AccountController {
+
+    @Autowired
+    private AccountService service;
+
+    @PostMapping("/create")
+    @PreAuthorize("hasAuthority('ROLE_MAKER')")
+    public Account createAccount(@RequestBody Account account) {
+        return service.createAccount(account);
+    }
+
+    @GetMapping("/{accountNumber}")
+    @PreAuthorize("hasAnyAuthority('ROLE_MAKER', 'ROLE_CHECKER')")
+    public Account getAccountDetails(@PathVariable String accountNumber) {
+        return service.getAccountDetails(accountNumber);
+    }
+}

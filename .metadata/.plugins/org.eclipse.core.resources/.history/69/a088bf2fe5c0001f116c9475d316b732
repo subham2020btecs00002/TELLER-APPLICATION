@@ -1,0 +1,11 @@
+package com.example.bank.dto;
+import com.example.bank.dto.TransactionRequest;
+
+import lombok.Data;
+
+@Data
+public class TransactionRequest {
+    private Long accountId;
+    private double amount;
+    private String type; // Deposit or Withdrawal
+}

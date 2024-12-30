@@ -1,0 +1,45 @@
+package com.example.bank.service;
+
+import com.example.bank.model.Account;
+import com.example.bank.model.Transaction;
+import com.example.bank.repository.AccountRepository;
+import lombok.RequiredArgsConstructor;
+import org.springframework.stereotype.Service;
+
+import java.util.List;
+import java.util.Optional;
+
+@Service
+@RequiredArgsConstructor
+public class AccountService {
+    private final AccountRepository accountRepository;
+    private final TransactionService transactionService; // Inject TransactionService
+
+    public List<Account> getAccountsByCustomerId(Long customerId) {
+        return accountRepository.findByCustomerCustomerId(customerId);
+    }
+
+    public Account createAccount(Account account) {
+        // Initialize opening and closing balance
+        account.setClosingBalance(account.getOpeningBalance());
+        Account createdAccount = accountRepository.save(account);
+
+        // Create a transaction for the opening balance
+        Transaction transaction = new Transaction();
+        transaction.setAccount(createdAccount);
+        transaction.setAmount(createdAccount.getOpeningBalance());
+        transaction.setType("DEPOSIT");
+        transactionService.createTransaction(transaction, false));
+
+        return createdAccount;
+    }
+
+    public Account getAccountById(Long accountId) {
+        return accountRepository.findById(accountId)
+                .orElseThrow(() -> new RuntimeException("Account not found"));
+    }
+
+    public Optional<Account> getAccountByAccountNumber(String accountNumber) {
+        return accountRepository.findByAccountNumber(accountNumber);
+    }
+}

@@ -1,0 +1,49 @@
+package com.example.bank.service;
+
+import com.example.bank.model.Account;
+import com.example.bank.model.Transaction;
+import com.example.bank.repository.AccountRepository;
+import com.example.bank.repository.TransactionRepository;
+import lombok.RequiredArgsConstructor;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+import java.util.List;
+
+@Service
+@RequiredArgsConstructor
+public class TransactionService {
+    private final TransactionRepository transactionRepository;
+    private final AccountRepository accountRepository;
+
+    @Transactional
+    public Transaction createTransaction(Transaction transaction, boolean adjustBalance) {
+        // Fetch the account associated with the transaction
+        Account account = accountRepository.findById(transaction.getAccount().getAccountId())
+                .orElseThrow(() -> new RuntimeException("Account not found"));
+
+        // Update account balances based on transaction type if adjustBalance is true
+        if (adjustBalance) {
+            if ("DEPOSIT".equalsIgnoreCase(transaction.getType())) {
+                account.setClosingBalance(account.getClosingBalance() + transaction.getAmount());
+            } else if ("WITHDRAWAL".equalsIgnoreCase(transaction.getType())) {
+                if (account.getClosingBalance() < transaction.getAmount()) {
+                    throw new RuntimeException("Insufficient balance");
+                }
+                account.setClosingBalance(account.getClosingBalance() - transaction.getAmount());
+            } else {
+                throw new RuntimeException("Invalid transaction type");
+            }
+
+            // Save the updated account
+            accountRepository.save(account);
+        }
+
+        // Save the transaction
+        return transactionRepository.save(transaction);
+    }
+
+    public List<Transaction> getTransactionsByAccountId(Long accountId) {
+        return transactionRepository.findByAccountAccountId(accountId);
+    }
+}

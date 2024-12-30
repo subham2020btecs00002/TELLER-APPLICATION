@@ -1,0 +1,24 @@
+package com.example.bank.controller;
+import com.example.bank.model.Transaction;
+import com.example.bank.service.TransactionService;
+import lombok.RequiredArgsConstructor;
+import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.web.bind.annotation.*;
+
+@RestController
+@RequestMapping("/api/transactions")
+@RequiredArgsConstructor
+public class TransactionController {
+    private final TransactionService transactionService;
+
+    @PostMapping("/approve")
+    @PreAuthorize("hasAuthority('ROLE_AUTHORIZER')")
+    public ResponseEntity<String> approveTransaction(@RequestBody Transaction transaction) {
+        // Logic for approving transactions above $1000
+        if (transaction.getAmount() > 1000) {
+            return ResponseEntity.ok("Transaction approved by authorizer");
+        }
+        return ResponseEntity.badRequest().body("Transaction amount must exceed $1000 for approval");
+    }
+}

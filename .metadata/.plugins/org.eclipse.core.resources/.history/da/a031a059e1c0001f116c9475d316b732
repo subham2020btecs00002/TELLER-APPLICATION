@@ -1,0 +1,35 @@
+package com.example.bank.service;
+
+import com.example.bank.dto.AccountRequest;
+import com.example.bank.entity.Account;
+import com.example.bank.entity.Customer;
+import com.example.bank.repository.AccountRepository;
+import com.example.bank.repository.CustomerRepository;
+import lombok.RequiredArgsConstructor;
+import org.springframework.stereotype.Service;
+
+@Service
+@RequiredArgsConstructor
+public class AccountService {
+
+    private final AccountRepository accountRepository;
+    private final CustomerRepository customerRepository;
+
+    public void createAccount(AccountRequest request) {
+        Customer customer = customerRepository.findById(request.getCustomerId())
+                .orElseThrow(() -> new RuntimeException("Customer not found"));
+
+        Account account = new Account();
+        account.setAccountNumber(request.getAccountNumber());
+        account.setOpeningBalance(request.getOpeningBalance());
+        account.setClosingBalance(request.getOpeningBalance());
+        account.setCustomer(customer);
+
+        accountRepository.save(account);
+    }
+
+    public Account getAccountDetails(Long accountId) {
+        return accountRepository.findById(accountId)
+                .orElseThrow(() -> new RuntimeException("Account not found"));
+    }
+}

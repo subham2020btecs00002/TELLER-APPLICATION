@@ -1,0 +1,23 @@
+<!-- src/app/transaction/transaction.component.html -->
+<div class="transaction-form-container">
+    <h2>Create Transaction</h2>
+    <form (submit)="onSubmit()">
+      <div>
+        <label for="amount">Amount:</label>
+        <input type="number" [(ngModel)]="amount" name="amount" required>
+      </div>
+      <div>
+        <label for="type">Type:</label>
+        <select [(ngModel)]="type" name="type">
+          <option value="WITHDRAWAL">Withdrawal</option>
+          <option value="DEPOSIT">Deposit</option>
+        </select>
+      </div>
+      <div>
+        <label for="accountId">Account ID:</label>
+        <input type="number" [(ngModel)]="accountId" name="accountId" required>
+      </div>
+      <button type="submit">Create Transaction</button>
+    </form>
+  </div>
+  

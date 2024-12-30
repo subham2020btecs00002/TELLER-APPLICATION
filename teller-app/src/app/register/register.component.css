@@ -1,0 +1,22 @@
+/* src/app/register/register.component.css */
+.register-container {
+    width: 80%;
+    max-width: 600px;
+    margin: 20px auto;
+    font-family: Arial, sans-serif;
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  form div {
+    margin-bottom: 10px;
+  }
+  
+  button {
+    width: 100px;
+    padding: 10px;
+  }
+  

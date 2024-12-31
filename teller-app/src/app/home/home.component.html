@@ -1,0 +1,32 @@
+<!-- src/app/home/home.component.html -->
+<div class="home-container">
+    <h2>Welcome to the Home Page</h2>
+    <div class="card-container">
+      <div *ngIf="isRole('[ROLE_MAKER]')" class="card">
+        <h3>Create Customer</h3>
+        <a routerLink="/customer" class="btn btn-primary">Go</a>
+      </div>
+  
+      <div *ngIf="isRole('[ROLE_MAKER]')" class="card">
+        <h3>Create Account</h3>
+        <a routerLink="/account" class="btn btn-primary">Go</a>
+      </div>
+
+      <div *ngIf="isRole('[ROLE_MAKER]')" class="card">
+        <h3>Make Transactions</h3>
+        <a routerLink="/transaction/create" class="btn btn-primary">Go</a>
+      </div>
+  
+
+    <div *ngIf="isRole('[ROLE_AUTHORIZER]') || isRole('[ROLE_CHECKER]')" class="card">
+        <h3>View Pending Transactions</h3>
+        <a routerLink="/transaction/pending" class="btn btn-primary">Go</a>
+      </div>
+  
+      <div *ngIf="isRole('[ROLE_AUTHORIZER]')" class="card">
+        <h3>Approve Transactions</h3>
+        <a routerLink="/transaction/:transactionId/approve" class="btn btn-primary">Go</a>
+      </div>
+    </div>
+  </div>
+  

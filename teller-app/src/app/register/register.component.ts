@@ -1,6 +1,6 @@
-// src/app/register/register.component.ts
 import { Component } from '@angular/core';
 import { AuthService } from '../services/auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-register',
@@ -11,9 +11,9 @@ export class RegisterComponent {
   name: string = '';
   password: string = '';
   email: string = '';
-  roles: string = 'ROLE_MAKER'; // Default role, can be changed dynamically if required
+  roles: string = 'ROLE_MAKER';
 
-  constructor(private authService: AuthService) {}
+  constructor(private authService: AuthService, private router: Router) {}
 
   onSubmit() {
     const newUser = {
@@ -25,7 +25,8 @@ export class RegisterComponent {
 
     this.authService.register(newUser).subscribe(
       response => {
-        console.log('User registered successfully', response);
+        console.log(response); // Should log "User Added Successfully"
+        this.router.navigate(['/auth']); // Redirect to login
       },
       error => {
         console.error('Error registering user', error);

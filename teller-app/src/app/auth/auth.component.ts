@@ -24,12 +24,13 @@ export class AuthComponent {
         const roles = this.authService.getUserRoles();
         console.log(roles);
   
-        // Redirect or handle login success
-        this.errorMessage = '';
+        // Redirect to the home page after successful login
+        this.router.navigate(['/home']); // Redirect to home
       },
       error => {
         console.error('Login error:', error);
         this.errorMessage = 'Invalid credentials!';
       }
     );
-  }}
+  }
+}

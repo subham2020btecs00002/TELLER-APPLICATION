@@ -1,0 +1,7 @@
+<h2>Pending Transactions</h2>
+<ul>
+  <li *ngFor="let transaction of pendingTransactions">
+    ID: {{ transaction.transactionId }}, Amount: {{ transaction.amount }}, Type: {{ transaction.type }},
+    Account ID: {{ transaction.accountId }}, Status: {{transaction.status}}
+  </li>
+</ul>

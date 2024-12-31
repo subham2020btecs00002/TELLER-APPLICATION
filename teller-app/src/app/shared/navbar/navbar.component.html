@@ -1,0 +1,14 @@
+<nav class="navbar">
+    <ul>
+      <li><a routerLink="/home" routerLinkActive="active">Home</a></li>
+      <li *ngIf="!isAuthenticated()">
+        <a routerLink="/auth" routerLinkActive="active">Login</a>
+      </li>
+      <li *ngIf="!isAuthenticated()">
+        <a routerLink="/register" routerLinkActive="active">Register</a>
+      </li>
+  
+      <li *ngIf="isAuthenticated()"><a (click)="logout()">Logout</a></li>
+    </ul>
+  </nav>
+  

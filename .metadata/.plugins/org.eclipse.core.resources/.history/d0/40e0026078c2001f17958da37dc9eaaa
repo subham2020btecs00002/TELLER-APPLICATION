@@ -1,5 +1,0 @@
-package com.ey.springboot3security.config;
-
-public class SwaggerConfig {
-
-}

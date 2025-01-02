@@ -1,7 +1,26 @@
 <h2>Pending Transactions</h2>
-<ul>
-  <li *ngFor="let transaction of pendingTransactions">
-    ID: {{ transaction.transactionId }}, Amount: {{ transaction.amount }}, Type: {{ transaction.type }},
-    Account ID: {{ transaction.accountId }}, Status: {{transaction.status}}
-  </li>
-</ul>
+<table class="pending-transactions-table">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Amount</th>
+      <th>Type</th>
+      <th>Account ID</th>
+      <th>Status</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let transaction of pendingTransactions">
+      <td>{{ transaction.transactionId }}</td>
+      <td>{{ transaction.amount }}</td>
+      <td>{{ transaction.type }}</td>
+      <td>{{ transaction.accountId }}</td>
+      <td>{{ transaction.status }}</td>
+      <td>
+        <button (click)="approveTransaction(transaction.transactionId, true)">Approve</button>
+        <button (click)="approveTransaction(transaction.transactionId, false)">Reject</button>
+      </td>
+    </tr>
+  </tbody>
+</table>

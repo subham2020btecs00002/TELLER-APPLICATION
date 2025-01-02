@@ -1,0 +1,56 @@
+.account-form-container {
+    padding: 40px;
+    background-color: #f8f9fa; /* Light background for better contrast */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for form container */
+    max-width: 600px;
+    margin: 0 auto; /* Center the form */
+    font-family: 'Arial, sans-serif'; /* Consistent font style */
+}
+
+.account-form-container h2 {
+    text-align: center;
+    color: #343a40; /* Darker color for form title */
+    margin-bottom: 20px;
+}
+
+form div {
+    margin-bottom: 15px;
+}
+
+form label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #495057; /* Darker color for labels */
+}
+
+form input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+form input:focus {
+    border-color: #007bff; /* Highlight on focus for inputs */
+    outline: none;
+    box-shadow: 0 0 8px #007bff; /* Subtle box shadow for focus effect */
+}
+
+form button {
+    width: 100%;
+    padding: 12px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
+form button:hover {
+    background-color: #0056b3; /* Darker blue on hover for button */
+}

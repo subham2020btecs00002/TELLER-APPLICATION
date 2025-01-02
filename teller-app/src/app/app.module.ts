@@ -10,9 +10,10 @@ import {CustomerComponent} from './customer/customer.component'
 import {RegisterComponent} from './register/register.component'
 import {TransactionComponent} from './transaction/transaction.component';
 import {PendingTransactionsComponent} from './transaction/pending-transactions.component';
-import {ApproveTransactionComponent} from './transaction/approve-transaction.component';
+// import {ApproveTransactionComponent} from './transaction/approve-transaction.component';
 import {HomeComponent} from './home/home.component';
 import { NavbarComponent } from './shared/navbar/navbar.component'
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -22,13 +23,14 @@ import { NavbarComponent } from './shared/navbar/navbar.component'
     CustomerComponent,
     RegisterComponent,
     TransactionComponent,
-    ApproveTransactionComponent,
+    // ApproveTransactionComponent,
     PendingTransactionsComponent,
     HomeComponent,
     NavbarComponent
   ],
   imports: [
     BrowserModule,
+    ReactiveFormsModule,
     AppRoutingModule,
     FormsModule,        // Add FormsModule here
     HttpClientModule

@@ -8,7 +8,7 @@ import { AccountComponent } from './account/account.component';
 import { RegisterComponent } from './register/register.component';
 import { TransactionComponent } from './transaction/transaction.component';
 import { AuthGuard } from './guards/auth.guard';
-import {ApproveTransactionComponent} from './transaction/approve-transaction.component';
+// import {ApproveTransactionComponent} from './transaction/approve-transaction.component';
 import {PendingTransactionsComponent} from './transaction/pending-transactions.component'
 import { HomeComponent } from './home/home.component'; // Import HomeComponent
 
@@ -21,7 +21,7 @@ const routes: Routes = [
   { path: 'account', component: AccountComponent, canActivate: [AuthGuard], data: { roles: ['ROLE_MAKER'] }},
   { path: 'transaction/create', component: TransactionComponent, canActivate: [AuthGuard], data: { roles: ['ROLE_MAKER'] }},
   { path: 'transaction/pending', component: PendingTransactionsComponent, canActivate: [AuthGuard], data: { roles: ['ROLE_AUTHORIZER', 'ROLE_CHECKER'] }},
-  { path: 'transaction/:transactionId/approve', component: ApproveTransactionComponent, canActivate: [AuthGuard], data: { roles: ['ROLE_AUTHORIZER'] }},
+  // { path: 'transaction/:transactionId/approve', component: ApproveTransactionComponent, canActivate: [AuthGuard], data: { roles: ['ROLE_AUTHORIZER'] }},
   { path: '**', redirectTo: '' }
 ];
 

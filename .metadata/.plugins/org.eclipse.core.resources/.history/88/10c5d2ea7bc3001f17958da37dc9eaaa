@@ -1,5 +1,0 @@
-package com.example.httpbinrelay.config;
-
-public class WebClientConfig {
-
-}

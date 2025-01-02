@@ -1,28 +1,42 @@
-<!-- src/app/register/register.component.html -->
 <div class="register-container">
     <h2>Register</h2>
-    <form (submit)="onSubmit()">
+    <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
       <div>
         <label for="name">Name:</label>
-        <input type="text" [(ngModel)]="name" name="name" required>
+        <input type="text" formControlName="name" required>
+        <div *ngIf="registerForm.get('name')?.invalid && registerForm.get('name')?.touched">
+          <small *ngIf="registerForm.get('name')?.errors?.['required']">Name is required.</small>
+        </div>
       </div>
       <div>
         <label for="email">Email:</label>
-        <input type="email" [(ngModel)]="email" name="email" required>
+        <input type="email" formControlName="email" required>
+        <div *ngIf="registerForm.get('email')?.invalid && registerForm.get('email')?.touched">
+          <small *ngIf="registerForm.get('email')?.errors?.['required']">Email is required.</small>
+          <small *ngIf="registerForm.get('email')?.errors?.['email']">Invalid email format.</small>
+        </div>
       </div>
       <div>
         <label for="password">Password:</label>
-        <input type="password" [(ngModel)]="password" name="password" required>
+        <input type="password" formControlName="password" required>
+        <div *ngIf="registerForm.get('password')?.invalid && registerForm.get('password')?.touched">
+          <small *ngIf="registerForm.get('password')?.errors?.['required']">Password is required.</small>
+          <small *ngIf="registerForm.get('password')?.errors?.['minlength']">Password must be at least 6 characters long.</small>
+        </div>
       </div>
       <div>
         <label for="roles">Role:</label>
-        <select [(ngModel)]="roles" name="roles">
+        <select formControlName="roles" required>
           <option value="ROLE_MAKER">Maker</option>
           <option value="ROLE_CHECKER">Checker</option>
           <option value="ROLE_AUTHORIZER">Authorizer</option>
         </select>
+        <div *ngIf="registerForm.get('roles')?.invalid && registerForm.get('roles')?.touched">
+          <small *ngIf="registerForm.get('roles')?.errors?.['required']">Role is required.</small>
+        </div>
       </div>
-      <button type="submit">Register</button>
+      <button type="submit" [disabled]="registerForm.invalid">Register</button>
     </form>
+    <div *ngIf="errorMessage">{{ errorMessage }}</div>
   </div>
   

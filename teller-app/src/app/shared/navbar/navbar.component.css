@@ -1,22 +1,26 @@
+/* Base Styles */
 .navbar {
     background-color: #333;
-    overflow: hidden;
+    color: white;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    position: relative;
+    z-index: 10;
   }
   
   .navbar ul {
-    list-style-type: none;
+    list-style: none;
     margin: 0;
     padding: 0;
     display: flex;
+    gap: 20px;
+    transition: transform 0.3s ease;
+    align-items: center;
   }
   
-  .navbar li {
-    padding: 14px 20px;
-  }
-  
-  .navbar a {
+  .navbar a, .navbar span {
     text-decoration: none;
     color: white;
   }
@@ -28,5 +32,128 @@
   
   .navbar a:hover {
     color: #00bcd4;
+  }
+  
+  .navbar span {
+    color: #00bcd4;
+    font-weight: bold;
+    font-size: 1.2em;
+  }
+  
+  /* Login/Register Links */
+  .auth-links {
+    margin-left: auto;
+    display: flex;
+    gap: 10px;
+  }
+  
+  .auth-links a {
+    padding: 5px 10px;
+    background-color: #00bcd4;
+    color: white;
+    border-radius: 5px;
+  }
+  
+  .auth-links a:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Sidebar and Toggle Styles */
+  .menu-toggle {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5em;
+    cursor: pointer;
+    display: none;
+  }
+  
+  .brand-logo {
+    color: white;
+    text-decoration: none;
+    font-size: 1.5em;
+    font-weight: bold;
+  }
+  
+  .navbar ul {
+    transform: translateX(100%);
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100vh;
+    flex-direction: column;
+    background-color: #333;
+    width: 250px;
+    padding: 20px;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
+    display: none;
+    align-items: flex-start;
+  }
+  
+  .navbar ul.active {
+    transform: translateX(0);
+    display: flex;
+  }
+  
+  .close-button {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5em;
+    align-self: flex-start;
+    margin-bottom: 10px;
+    cursor: pointer;
+    display: none;
+  }
+  
+  .navbar ul.active .close-button {
+    display: block;
+  }
+  
+  /* Responsive Styles */
+  @media (max-width: 768px) {
+    .menu-toggle {
+      display: block;
+    }
+  
+    .navbar ul {
+      display: none;
+    }
+  
+    .auth-links {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    .auth-links a {
+      width: 100%;
+      margin: 5px 0;
+      text-align: left;
+    }
+  }
+  
+  @media (min-width: 769px) {
+    .menu-toggle {
+      display: none;
+    }
+  
+    .navbar ul {
+      transform: none;
+      position: static;
+      height: auto;
+      flex-direction: row;
+      display: flex;
+      gap: 20px;
+      background-color: transparent;
+      box-shadow: none;
+    }
+  
+    .auth-links {
+      flex-direction: row;
+    }
+  
+    .close-button {
+      display: none;
+    }
   }
   

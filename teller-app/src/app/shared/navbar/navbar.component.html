@@ -1,14 +1,17 @@
 <nav class="navbar">
-    <ul>
-      <li><a routerLink="/home" routerLinkActive="active">Home</a></li>
-      <li *ngIf="!isAuthenticated()">
-        <a routerLink="/auth" routerLinkActive="active">Login</a>
+    <a routerLink="/home" class="brand-logo">Teller App</a>
+    <button class="menu-toggle" (click)="toggleSidebar()">☰</button>
+    <ul [class.active]="sidebarOpen">
+        <button class="close-button" (click)="toggleSidebar()">✖</button>
+      <li *ngIf="isAuthenticated()">
+        <span>Welcome, {{ username }}</span>
       </li>
-      <li *ngIf="!isAuthenticated()">
+      <li class="auth-links" *ngIf="!isAuthenticated()">
+        <a routerLink="/auth" routerLinkActive="active">Login</a>
         <a routerLink="/register" routerLinkActive="active">Register</a>
       </li>
-  
-      <li *ngIf="isAuthenticated()"><a (click)="logout()">Logout</a></li>
+      <li *ngIf="isAuthenticated()">
+        <a (click)="logout()">Logout</a>
+      </li>
     </ul>
   </nav>
-  

@@ -1,0 +1,64 @@
+.table-container {
+    width: 100%;
+    overflow-x: auto; /* Enable horizontal scrolling */
+}
+
+.pending-transactions-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 0 auto; /* Center the table */
+    font-family: 'Arial, sans-serif';
+    font-size: 16px;
+}
+
+.pending-transactions-table th, 
+.pending-transactions-table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+    color: #495057; /* Darker color for text */
+}
+
+.pending-transactions-table th {
+    background-color: #007bff;
+    color: white;
+    font-weight: bold;
+}
+
+.pending-transactions-table tr:hover {
+    background-color: #f1f1f1; /* Light gray hover effect */
+}
+
+.pending-transactions-table td {
+    vertical-align: middle; /* Center vertical alignment of content */
+}
+
+/* Responsive styles */
+@media (max-width: 600px) {
+    .pending-transactions-table thead {
+        display: none; /* Hide table headers */
+    }
+    .pending-transactions-table, 
+    .pending-transactions-table tbody, 
+    .pending-transactions-table tr, 
+    .pending-transactions-table td {
+        display: block;
+        width: 100%;
+    }
+    .pending-transactions-table tr {
+        margin-bottom: 15px;
+    }
+    .pending-transactions-table td {
+        text-align: right;
+        padding-left: 50%;
+        position: relative;
+    }
+    .pending-transactions-table td::before {
+        content: attr(data-label);
+        position: absolute;
+        left: 10px;
+        width: calc(50% - 20px);
+        text-align: left;
+        font-weight: bold;
+    }
+}

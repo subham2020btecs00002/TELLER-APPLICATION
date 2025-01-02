@@ -1,5 +1,0 @@
-package com.example.httpbinrelay.model;
-
-public class RelayRequest {
-
-}

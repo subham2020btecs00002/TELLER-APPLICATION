@@ -11,6 +11,9 @@ import {RegisterComponent} from './register/register.component'
 import {TransactionComponent} from './transaction/transaction.component';
 import {PendingTransactionsComponent} from './transaction/pending-transactions.component';
 // import {ApproveTransactionComponent} from './transaction/approve-transaction.component';
+import {GetAccountDetailsComponent} from './account/get-account-details.component';
+import {GetAccountsComponent} from './account/get-accounts.component';
+import {GetBalancesComponent} from './account/get-balances.component';
 import {HomeComponent} from './home/home.component';
 import { NavbarComponent } from './shared/navbar/navbar.component'
 import { ReactiveFormsModule } from '@angular/forms';
@@ -23,6 +26,9 @@ import { ReactiveFormsModule } from '@angular/forms';
     CustomerComponent,
     RegisterComponent,
     TransactionComponent,
+    GetBalancesComponent,
+    GetAccountDetailsComponent,
+    GetAccountsComponent,
     // ApproveTransactionComponent,
     PendingTransactionsComponent,
     HomeComponent,

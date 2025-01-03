@@ -16,7 +16,19 @@
         <h3>Make Transactions</h3>
         <a routerLink="/transaction/create" class="btn btn-primary">Go</a>
       </div>
-  
+      <div *ngIf="isRole('[ROLE_MAKER]')" class="card">
+        <h3>Account Details</h3>
+        <a routerLink="/account/get-account-details" class="btn btn-primary">Go</a>
+      </div>
+      <div *ngIf="isRole('[ROLE_MAKER]')" class="card">
+        <h3>Check Account Balance</h3>
+        <a routerLink="/account/get-balances" class="btn btn-primary">Go</a>
+      </div>
+      <div *ngIf="isRole('[ROLE_MAKER]')" class="card">
+        <h3>Get Accounts</h3>
+        <a routerLink="/account/get-accounts" class="btn btn-primary">Go</a>
+      </div>
+
 
     <div *ngIf="isRole('[ROLE_AUTHORIZER]') || isRole('[ROLE_CHECKER]')" class="card">
         <h3>View Pending Transactions</h3>

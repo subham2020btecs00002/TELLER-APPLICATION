@@ -1,0 +1,29 @@
+<div class="account-details-container">
+    <h2>Get Account Details</h2>
+    <div class="form-group">
+      <input 
+        type="text" 
+        class="form-control" 
+        placeholder="Enter Account Number" 
+        [(ngModel)]="accountNumber" 
+      />
+      <button (click)="fetchAccountDetails()" class="btn btn-primary">Get Details</button>
+    </div>
+  
+    <div *ngIf="account" class="account-details">
+      <h3>Account Details</h3>
+      <ul>
+        <li><strong>Account ID:</strong> {{ account.accountId }}</li>
+        <li><strong>Customer ID:</strong> {{ account.customerId }}</li>
+        <li><strong>Customer Name:</strong> {{ account.customerName }}</li>
+        <li><strong>Email:</strong> {{ account.customerEmail }}</li>
+        <li><strong>Phone Number:</strong> {{ account.customerPhoneNumber }}</li>
+        <li><strong>Gender:</strong> {{ account.customerGender }}</li>
+        <li><strong>Address:</strong> {{ account.customerAddress }}</li>
+        <li><strong>Opening Balance:</strong> ₹{{ account.openingBalance }}</li>
+        <li><strong>Closing Balance:</strong> ₹{{ account.closingBalance }}</li>
+        <li><strong>Account Number:</strong> {{ account.accountNumber }}</li>
+      </ul>
+    </div>
+  </div>
+  

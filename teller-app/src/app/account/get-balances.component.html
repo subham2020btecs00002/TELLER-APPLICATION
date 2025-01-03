@@ -1,0 +1,27 @@
+<div class="balances-container">
+    <h2>Get Account Balances</h2>
+    <div class="form-group">
+      <input
+        type="number"
+        class="form-control"
+        placeholder="Enter Customer ID"
+        [(ngModel)]="customerId"
+      />
+      <input
+        type="text"
+        class="form-control"
+        placeholder="Enter Account Number"
+        [(ngModel)]="accountNumber"
+      />
+      <button class="btn btn-primary" (click)="fetchBalances()">Get Balances</button>
+    </div>
+  
+    <div *ngIf="balances" class="balance-details">
+      <h3>Account Balances</h3>
+      <div class="balance-card">
+        <p><strong>Opening Balance:</strong> ₹{{ balances.openingBalance }}</p>
+        <p><strong>Closing Balance:</strong> ₹{{ balances.closingBalance }}</p>
+      </div>
+    </div>
+  </div>
+  

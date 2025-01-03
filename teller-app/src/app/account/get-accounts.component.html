@@ -1,14 +1,21 @@
 <div class="accounts-container">
     <h2>Get Accounts By Customer ID</h2>
-    <div class="form-group">
-      <input
-        type="number"
-        class="form-control"
-        placeholder="Enter Customer ID"
-        [(ngModel)]="customerId"
-      />
-      <button (click)="fetchAccounts()" class="btn btn-primary">Get Accounts</button>
-    </div>
+    <form [formGroup]="accountsForm" (ngSubmit)="fetchAccounts()">
+      <div class="form-group">
+        <input
+          type="number"
+          class="form-control"
+          placeholder="Enter Customer ID"
+          formControlName="customerId"
+          required
+        />
+        <div *ngIf="accountsForm.get('customerId')?.invalid && accountsForm.get('customerId')?.touched">
+          <small *ngIf="accountsForm.get('customerId')?.errors?.['required']">Customer ID is required.</small>
+          <small *ngIf="accountsForm.get('customerId')?.errors?.['pattern']">Customer ID must be a number.</small>
+        </div>
+        <button type="submit" class="btn btn-primary" [disabled]="accountsForm.invalid">Get Accounts</button>
+      </div>
+    </form>
   
     <div *ngIf="accounts.length > 0" class="accounts-table">
       <h3>Accounts</h3>

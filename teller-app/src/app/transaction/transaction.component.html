@@ -1,23 +1,34 @@
 <!-- src/app/transaction/transaction.component.html -->
 <div class="transaction-form-container">
-    <h2>Create Transaction</h2>
-    <form (submit)="onSubmit()">
-      <div>
-        <label for="amount">Amount:</label>
-        <input type="number" [(ngModel)]="amount" name="amount" required>
+  <h2>Create Transaction</h2>
+  <form [formGroup]="transactionForm" (ngSubmit)="onSubmit()">
+    <div>
+      <label for="amount">Amount:</label>
+      <input type="number" formControlName="amount" required />
+      <div *ngIf="transactionForm.get('amount')?.invalid && transactionForm.get('amount')?.touched">
+        <small *ngIf="transactionForm.get('amount')?.errors?.['required']">Amount is required.</small>
+        <small *ngIf="transactionForm.get('amount')?.errors?.['min']">Amount must be at least 1.</small>
       </div>
-      <div>
-        <label for="type">Type:</label>
-        <select [(ngModel)]="type" name="type">
-          <option value="WITHDRAWAL">Withdrawal</option>
-          <option value="DEPOSIT">Deposit</option>
-        </select>
+    </div>
+    <div>
+      <label for="type">Type:</label>
+      <select formControlName="type" required>
+        <option value="">Select Type</option>
+        <option value="WITHDRAWAL">Withdrawal</option>
+        <option value="DEPOSIT">Deposit</option>
+      </select>
+      <div *ngIf="transactionForm.get('type')?.invalid && transactionForm.get('type')?.touched">
+        <small *ngIf="transactionForm.get('type')?.errors?.['required']">Type is required.</small>
       </div>
-      <div>
-        <label for="accountId">Account ID:</label>
-        <input type="number" [(ngModel)]="accountId" name="accountId" required>
+    </div>
+    <div>
+      <label for="accountId">Account ID:</label>
+      <input type="number" formControlName="accountId" required />
+      <div *ngIf="transactionForm.get('accountId')?.invalid && transactionForm.get('accountId')?.touched">
+        <small *ngIf="transactionForm.get('accountId')?.errors?.['required']">Account ID is required.</small>
+        <small *ngIf="transactionForm.get('accountId')?.errors?.['pattern']">Account ID must be a number.</small>
       </div>
-      <button type="submit">Create Transaction</button>
-    </form>
-  </div>
-  
+    </div>
+    <button type="submit" [disabled]="transactionForm.invalid">Create Transaction</button>
+  </form>
+</div>

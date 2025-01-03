@@ -1,20 +1,32 @@
 <div class="balances-container">
     <h2>Get Account Balances</h2>
-    <div class="form-group">
-      <input
-        type="number"
-        class="form-control"
-        placeholder="Enter Customer ID"
-        [(ngModel)]="customerId"
-      />
-      <input
-        type="text"
-        class="form-control"
-        placeholder="Enter Account Number"
-        [(ngModel)]="accountNumber"
-      />
-      <button class="btn btn-primary" (click)="fetchBalances()">Get Balances</button>
-    </div>
+    <form [formGroup]="balancesForm" (ngSubmit)="fetchBalances()">
+      <div class="form-group">
+        <input
+          type="number"
+          class="form-control"
+          placeholder="Enter Customer ID"
+          formControlName="customerId"
+          required
+        />
+        <div *ngIf="balancesForm.get('customerId')?.invalid && balancesForm.get('customerId')?.touched">
+          <small *ngIf="balancesForm.get('customerId')?.errors?.['required']">Customer ID is required.</small>
+          <small *ngIf="balancesForm.get('customerId')?.errors?.['pattern']">Customer ID must be a number.</small>
+        </div>
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Enter Account Number"
+          formControlName="accountNumber"
+          required
+        />
+        <div *ngIf="balancesForm.get('accountNumber')?.invalid && balancesForm.get('accountNumber')?.touched">
+          <small *ngIf="balancesForm.get('accountNumber')?.errors?.['required']">Account number is required.</small>
+          <small *ngIf="balancesForm.get('accountNumber')?.errors?.['minlength']">Account number must be at least 5 characters long.</small>
+        </div>
+        <button type="submit" class="btn btn-primary" [disabled]="balancesForm.invalid">Get Balances</button>
+      </div>
+    </form>
   
     <div *ngIf="balances" class="balance-details">
       <h3>Account Balances</h3>

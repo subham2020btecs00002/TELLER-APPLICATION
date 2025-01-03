@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { TransactionService } from '../services/transaction.service';
 import { Router } from '@angular/router';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-pending-transactions',
@@ -10,8 +11,7 @@ import { Router } from '@angular/router';
 export class PendingTransactionsComponent implements OnInit {
   pendingTransactions: any[] = [];
 
-  constructor(private transactionService: TransactionService,private router: Router
-  ) {}
+  constructor(private transactionService: TransactionService, private router: Router) {}
 
   ngOnInit(): void {
     this.getPendingTransactions();
@@ -30,18 +30,39 @@ export class PendingTransactionsComponent implements OnInit {
   }
 
   approveTransaction(transactionId: number, approve: boolean) {
-    this.transactionService.approveTransaction(transactionId, approve).subscribe(
-      (response) => {
-        console.log('Transaction approved/rejected:', response);
-        // Update the specific transaction in the list
-        const index = this.pendingTransactions.findIndex(t => t.id === transactionId);
-        if (index !== -1) {
-          this.pendingTransactions[index].status = approve ? 'approved' : 'rejected';
-        }
-      },
-      (error) => {
-        console.error('Error approving/rejecting transaction:', error);
+    Swal.fire({
+      title: 'Are you sure?',
+      text: `Do you want to ${approve ? 'approve' : 'reject'} this transaction?`,
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonText: 'Yes',
+      cancelButtonText: 'No'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        this.transactionService.approveTransaction(transactionId, approve, { responseType: 'text' }).subscribe(
+          (response) => {
+            console.log('Transaction approved/rejected:', response);
+            Swal.fire({
+              title: approve ? 'Approved!' : 'Rejected!',
+              text: response,
+              icon: approve ? 'success' : 'error',
+              confirmButtonText: 'OK'
+            }).then(() => {
+              // Hard refresh the page to update the list
+              window.location.reload();
+            });
+          },
+          (error) => {
+            console.error('Error approving/rejecting transaction:', error);
+            Swal.fire({
+              title: 'Error!',
+              text: 'There was an error processing the transaction.',
+              icon: 'error',
+              confirmButtonText: 'OK'
+            });
+          }
+        );
       }
-    );
+    });
   }
-  }
+}

@@ -1,18 +1,30 @@
 <div class="account-form-container">
-    <h2>Create Account</h2>
-    <form (submit)="onSubmit()">
-      <div>
-        <label for="openingBalance">Opening Balance:</label>
-        <input type="number" [(ngModel)]="openingBalance" name="openingBalance" required>
+  <h2>Create Account</h2>
+  <form [formGroup]="accountForm" (ngSubmit)="onSubmit()">
+    <div>
+      <label for="openingBalance">Opening Balance:</label>
+      <input type="number" formControlName="openingBalance" required />
+      <div *ngIf="accountForm.get('openingBalance')?.invalid && accountForm.get('openingBalance')?.touched">
+        <small *ngIf="accountForm.get('openingBalance')?.errors?.['required']">Opening balance is required.</small>
+        <small *ngIf="accountForm.get('openingBalance')?.errors?.['min']">Opening balance must be a positive number.</small>
       </div>
-      <div>
-        <label for="accountNumber">Account Number:</label>
-        <input type="text" [(ngModel)]="accountNumber" name="accountNumber" required>
+    </div>
+    <div>
+      <label for="accountNumber">Account Number:</label>
+      <input type="text" formControlName="accountNumber" required />
+      <div *ngIf="accountForm.get('accountNumber')?.invalid && accountForm.get('accountNumber')?.touched">
+        <small *ngIf="accountForm.get('accountNumber')?.errors?.['required']">Account number is required.</small>
+        <small *ngIf="accountForm.get('accountNumber')?.errors?.['minlength']">Account number must be at least 5 characters long.</small>
       </div>
-      <div>
-        <label for="customerId">Customer ID:</label>
-        <input type="number" [(ngModel)]="customerId" name="customerId" required>
+    </div>
+    <div>
+      <label for="customerId">Customer ID:</label>
+      <input type="number" formControlName="customerId" required />
+      <div *ngIf="accountForm.get('customerId')?.invalid && accountForm.get('customerId')?.touched">
+        <small *ngIf="accountForm.get('customerId')?.errors?.['required']">Customer ID is required.</small>
+        <small *ngIf="accountForm.get('customerId')?.errors?.['pattern']">Customer ID must be a number.</small>
       </div>
-      <button type="submit">Create Account</button>
-    </form>
+    </div>
+    <button type="submit" [disabled]="accountForm.invalid">Create Account</button>
+  </form>
 </div>

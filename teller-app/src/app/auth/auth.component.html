@@ -1,24 +1,26 @@
 <div class="auth-container">
-    <h2>Login</h2>
-    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
-      <div>
-        <label for="username">Username:</label>
-        <input type="email" formControlName="username" required>
-        <div *ngIf="loginForm.get('username')?.invalid && loginForm.get('username')?.touched">
-          <small *ngIf="loginForm.get('username')?.errors?.['required']">Username is required.</small>
-          <small *ngIf="loginForm.get('username')?.errors?.['email']">Invalid email format.</small>
-        </div>
+  <h2>Login</h2>
+  <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+    <div>
+      <label for="username">Username:</label>
+      <input type="email" formControlName="username" required />
+      <div *ngIf="loginForm.get('username')?.invalid && loginForm.get('username')?.touched">
+        <small *ngIf="loginForm.get('username')?.errors?.['required']">Username is required.</small>
+        <small *ngIf="loginForm.get('username')?.errors?.['email']">Invalid email format.</small>
       </div>
-      <div>
-        <label for="password">Password:</label>
-        <input type="password" formControlName="password" required>
-        <div *ngIf="loginForm.get('password')?.invalid && loginForm.get('password')?.touched">
-          <small *ngIf="loginForm.get('password')?.errors?.['required']">Password is required.</small>
-          <small *ngIf="loginForm.get('password')?.errors?.['minlength']">Password must be at least 6 characters long.</small>
-        </div>
+    </div>
+    <div>
+      <label for="password">Password:</label>
+      <input type="password" formControlName="password" required />
+      <div *ngIf="loginForm.get('password')?.invalid && loginForm.get('password')?.touched">
+        <small *ngIf="loginForm.get('password')?.errors?.['required']">Password is required.</small>
+        <small *ngIf="loginForm.get('password')?.errors?.['minlength']">
+          Password must be at least 6 characters long.
+        </small>
       </div>
-      <button type="submit" [disabled]="loginForm.invalid">Login</button>
-    </form>
-    <div *ngIf="errorMessage">{{ errorMessage }}</div>
-  </div>
-  
+    </div>
+    <button type="submit" [disabled]="loginForm.invalid">Login</button>
+  </form>
+
+  <div *ngIf="errorMessage" class="error-message">{{ errorMessage }}</div>
+</div>

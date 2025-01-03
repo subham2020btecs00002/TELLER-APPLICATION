@@ -37,8 +37,8 @@ export class TransactionService {
     return this.http.get<any[]>(`${this.apiUrl}/pending`, { headers });
   }
 
-  approveTransaction(transactionId: number, approve: boolean): Observable<any> {
+  approveTransaction(transactionId: number, approve: boolean, options?: any): Observable<any> {
     const headers = this.getHeaders();
-    return this.http.put(`${this.apiUrl}/${transactionId}/approve?approve=${approve}`, {}, { headers });
+    return this.http.put(`${this.apiUrl}/${transactionId}/approve?approve=${approve}`, {}, { headers, ...options });
   }
 }

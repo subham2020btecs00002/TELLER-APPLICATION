@@ -18,8 +18,8 @@
       <td>{{ transaction.accountId }}</td>
       <td>{{ transaction.status }}</td>
       <td>
-        <button (click)="approveTransaction(transaction.transactionId, true)">Approve</button>
-        <button (click)="approveTransaction(transaction.transactionId, false)">Reject</button>
+        <button class="approve-button" (click)="approveTransaction(transaction.transactionId, true)">Approve</button>
+        <button class="reject-button" (click)="approveTransaction(transaction.transactionId, false)">Reject</button>
       </td>
     </tr>
   </tbody>

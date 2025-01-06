@@ -24,6 +24,10 @@ public class JwtUtil {
         byte[] keyBytes = Base64.getDecoder().decode(SECRET);
         return Keys.hmacShaKeyFor(keyBytes);
     }
+    public String extractEmail(String token) {
+        Claims claims = extractAllClaims(token);
+        return claims.getSubject();
+    }
 
     public String extractRole(String token) {
         Claims claims = extractAllClaims(token);

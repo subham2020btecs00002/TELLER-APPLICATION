@@ -20,9 +20,9 @@ public class AccountController {
     private final AccountService accountService;
 
     @PostMapping
-    public ResponseEntity<AccountInfoDTO> createAccount(@RequestBody Account account) {
+    public ResponseEntity<AccountInfoDTO> createAccount(@RequestBody Account account,@RequestHeader("Authorization") String token) {
         // Create the account and save it
-        Account createdAccount = accountService.createAccount(account);
+        Account createdAccount = accountService.createAccount(account,token.replace("Bearer ", ""));
 
         // Map the created Account to AccountInfoDTO
         Customer customer = createdAccount.getCustomer();  // Get the associated customer

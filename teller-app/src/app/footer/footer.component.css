@@ -1,0 +1,46 @@
+.footer p.mb-0 {
+    color: white; /* Set the text color to white to ensure visibility */
+}
+
+.footer {
+    background-color: black; /* Change background color to black */
+    padding: 20px 0;
+    text-align: center; /* Center content horizontally */
+}
+
+
+.footer a {
+    color: white;
+    text-decoration: none;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+}
+
+.list-unstyled {
+    display: flex;
+    justify-content: center; /* Center items horizontally */
+    flex-wrap: wrap; /* Allow wrapping on small screens */
+}
+
+.list-unstyled li {
+    margin: 0 15px; /* Adjust margin for spacing */
+}
+
+/* Ensure footer content remains horizontal on small screens */
+@media (max-width: 768px) {
+    .footer {
+        text-align: center;
+    }
+
+    .list-unstyled {
+        justify-content: space-around; /* Distribute items evenly */
+        flex-wrap: nowrap; /* Prevent wrapping */
+        overflow-x: auto; /* Allow horizontal scrolling if needed */
+    }
+
+    .list-unstyled li {
+        margin-bottom: 10px;
+    }
+}

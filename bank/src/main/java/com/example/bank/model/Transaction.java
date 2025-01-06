@@ -1,5 +1,7 @@
 package com.example.bank.model;
 
+import java.time.LocalDateTime;
+
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import jakarta.persistence.*;
@@ -29,5 +31,18 @@ public class Transaction {
     @JsonIgnore
     @Column(nullable = false)
     private String status; 
+
+    @Column(nullable = false) // Make it non-null for initiated by
+    private String initiatedBy;
+
+    @Column(nullable = false) // Make it non-null for initiated date
+    private LocalDateTime initiatedDate; 
+
+    
+    @Column(nullable = true) // Allow null for pending transactions
+    private String authorizedBy;
+
+    @Column(nullable = true)
+    private LocalDateTime authorizationDate; // Same for authorizationDate
 
 }

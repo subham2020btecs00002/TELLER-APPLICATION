@@ -1,0 +1,60 @@
+.page-container {
+    padding-bottom: 60px; /* Base spacing to ensure enough room for footer */
+}
+
+/* Adjust spacing dynamically for smaller screens */
+@media (max-width: 768px) { 
+    .page-container {
+        padding-bottom: 50px; /* Reduced spacing for smaller screens */
+    }
+}
+
+/* Footer styles */
+.footer {
+    background-color: black; /* Change background color to black */
+    padding: 20px 0;
+    text-align: center; /* Center content horizontally */
+    position: relative;
+}
+
+.footer p.mb-0 {
+    color: white; /* Ensure visibility for footer text */
+    margin-bottom: 15px;
+}
+
+.footer a {
+    color: white;
+    text-decoration: none;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+}
+
+/* Center and space footer links */
+.list-unstyled {
+    display: flex;
+    justify-content: center; /* Center items horizontally */
+    flex-wrap: wrap; /* Allow wrapping for smaller screens */
+}
+
+.list-unstyled li {
+    margin: 0 10px; /* Adjust margin for spacing */
+}
+
+/* Responsive footer adjustments */
+@media (max-width: 768px) {
+    .footer {
+        padding: 15px 0;
+    }
+
+    .list-unstyled {
+        justify-content: center; /* Keep items centered */
+        flex-wrap: wrap; /* Allow wrapping */
+        overflow-x: hidden; /* Avoid horizontal scroll */
+    }
+
+    .list-unstyled li {
+        margin: 5px 10px; /* Adjust margins for smaller screens */
+    }
+}

@@ -17,6 +17,7 @@ import {GetBalancesComponent} from './account/get-balances.component';
 import {HomeComponent} from './home/home.component';
 import { NavbarComponent } from './shared/navbar/navbar.component'
 import { ReactiveFormsModule } from '@angular/forms';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     // ApproveTransactionComponent,
     PendingTransactionsComponent,
     HomeComponent,
-    NavbarComponent
+    NavbarComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

@@ -5,6 +5,8 @@ import com.example.bank.model.Transaction;
 import com.example.bank.repository.AccountRepository;
 import com.example.bank.repository.TransactionRepository;
 import com.example.bank.service.TransactionService;
+import com.example.bank.util.JwtUtil;
+
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
@@ -19,6 +21,7 @@ public class TransactionController {
     private final TransactionService transactionService;
     private final TransactionRepository transactionRepository;
     private final AccountRepository accountRepository;
+    private final JwtUtil jwtUtil; // Util to extract email and role from JWT token
 
  // Fetch all pending transactions
     @GetMapping("/pending")
@@ -42,13 +45,22 @@ public class TransactionController {
     @PreAuthorize("hasAuthority('ROLE_AUTHORIZER')")
     public ResponseEntity<String> approveTransaction(
             @PathVariable Long transactionId,
-            @RequestParam boolean approve) {
-        transactionService.approveTransaction(transactionId, approve);
+            @RequestParam boolean approve,
+            @RequestHeader("Authorization") String token) {
+        transactionService.approveTransaction(transactionId, approve, token.replace("Bearer ", ""));
         return ResponseEntity.ok(approve ? "Transaction approved" : "Transaction rejected");
     }
     @PostMapping
-    public ResponseEntity<Object> createTransaction(@RequestBody Transaction transaction) {
+    public ResponseEntity<Object> createTransaction(@RequestBody Transaction transaction, @RequestHeader("Authorization") String token) {
         // Fetch the latest Account from the database
+    	
+        System.out.println("Received token: " + token);
+
+        String email = jwtUtil.extractEmail(token.replace("Bearer ", ""));
+
+        System.out.println("Received EMAIL: " + email);
+
+        
         Account account = accountRepository.findById(transaction.getAccount().getAccountId())
                 .orElseThrow(() -> new RuntimeException("Account not found"));
 
@@ -66,7 +78,8 @@ public class TransactionController {
             }
         }
 
-        Transaction createdTransaction = transactionService.createTransaction(transaction,true);
+
+        Transaction createdTransaction = transactionService.createTransaction(transaction,true,token.replace("Bearer ", ""));
         TransactionDTO transactionDTO = new TransactionDTO(
                 createdTransaction.getTransactionId(),
                 createdTransaction.getAmount(),

@@ -11,6 +11,7 @@ import { AuthGuard } from './guards/auth.guard';
 import { GetAccountsComponent } from './account/get-accounts.component';
 import { GetBalancesComponent } from './account/get-balances.component';
 import { GetAccountDetailsComponent } from './account/get-account-details.component';
+import { EStatementComponent } from './e-statement/e-statement.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/auth', pathMatch: 'full' },
@@ -24,6 +25,7 @@ const routes: Routes = [
   { path: 'account/get-account-details', component: GetAccountDetailsComponent, canActivate: [AuthGuard], data: { roles: ['ROLE_MAKER'] }},
   { path: 'transaction/create', component: TransactionComponent, canActivate: [AuthGuard], data: { roles: ['ROLE_MAKER'] }},
   { path: 'transaction/pending', component: PendingTransactionsComponent, canActivate: [AuthGuard], data: { roles: ['ROLE_AUTHORIZER', 'ROLE_CHECKER'] }},
+  { path: 'e-statement', component: EStatementComponent, canActivate: [AuthGuard] },
   { path: '**', redirectTo: '' }
 ];
 

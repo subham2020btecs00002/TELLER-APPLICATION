@@ -5278,3 +5278,243 @@ org.eclipse.core.runtime.CoreException: Could not resolve artifact com.itextpdf:
 2025-01-08 13:35:01,366 [Worker-604: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
 2025-01-08 13:35:01,403 [Worker-604: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
 2025-01-08 13:35:01,415 [Worker-604: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory D:\BANKING APP\bank\src\test\resources
+2025-01-08 13:41:47,638 [Worker-561: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-01-08 13:41:47,639 [Worker-561: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-01-08 13:41:47,641 [Worker-561: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory D:\BANKING APP\bank\src\test\resources
+2025-01-08 14:06:04,874 [Worker-613: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-01-08 14:06:04,875 [Worker-613: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-01-08 14:06:04,877 [Worker-613: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory D:\BANKING APP\bank\src\test\resources
+2025-01-08 14:36:53,324 [Worker-619: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-01-08 14:36:53,335 [Worker-619: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-01-08 14:36:53,338 [Worker-619: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory D:\BANKING APP\bank\src\test\resources
+2025-01-08 14:37:17,645 [Worker-621: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-01-08 14:37:17,652 [Worker-621: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-01-08 14:37:17,655 [Worker-621: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory D:\BANKING APP\bank\src\test\resources
+2025-01-08 14:38:48,373 [Worker-624: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-01-08 14:38:48,379 [Worker-624: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-01-08 14:38:48,381 [Worker-624: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory D:\BANKING APP\bank\src\test\resources
+2025-01-08 14:38:54,784 [Worker-622: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-01-08 14:38:54,794 [Worker-622: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-01-08 14:38:54,797 [Worker-622: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory D:\BANKING APP\bank\src\test\resources
+2025-01-08 14:39:07,700 [Worker-622: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-01-08 14:39:07,710 [Worker-622: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-01-08 14:39:07,713 [Worker-622: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory D:\BANKING APP\bank\src\test\resources
+2025-01-08 14:39:24,662 [Worker-620: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-01-08 14:39:24,668 [Worker-620: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-01-08 14:39:24,671 [Worker-620: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory D:\BANKING APP\bank\src\test\resources
+2025-01-08 14:39:34,718 [Worker-620: Updating Maven Project] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update started
+2025-01-08 14:39:35,124 [Worker-620: Updating Maven Project] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.gfg:springboot3-security:0.0.1-SNAPSHOT @ D:\BANKING APP\bank\pom.xml.
+2025-01-08 14:39:36,689 [Worker-620: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /bank/src/main/java
+2025-01-08 14:39:36,690 [Worker-620: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /bank/src/main/resources
+2025-01-08 14:39:36,690 [Worker-620: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /bank/src/main/resources
+2025-01-08 14:39:36,690 [Worker-620: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /bank/src/test/java
+2025-01-08 14:39:36,691 [Worker-620: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /bank/src/test/resources
+2025-01-08 14:39:37,639 [Worker-620: Updating Maven Project] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update completed for 1 poms: local refresh takes 0.00 sec, refresh facades takes 1.00 sec, update config takes 0.00 sec 
+2025-01-08 14:39:38,632 [Worker-625: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-01-08 14:39:38,646 [Worker-625: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-01-08 14:39:38,651 [Worker-625: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory D:\BANKING APP\bank\src\test\resources
+2025-01-08 14:39:55,805 [LS-org.eclipse.languageserver.languages.springboot#listener-1] ERROR reactor.core.publisher.Operators - Operator called default onErrorDropped
+reactor.core.Exceptions$ErrorCallbackNotImplemented: java.lang.NullPointerException: Cannot invoke "org.eclipse.lsp4j.services.LanguageServer.getWorkspaceService()" because "ls" is null
+Caused by: java.lang.NullPointerException: Cannot invoke "org.eclipse.lsp4j.services.LanguageServer.getWorkspaceService()" because "ls" is null
+	at org.springframework.ide.eclipse.boot.dash.liveprocess.DefaultLiveProcessCommandExecutor.lambda$7(DefaultLiveProcessCommandExecutor.java:62)
+	at org.eclipse.lsp4e.LanguageServers.lambda$3(LanguageServers.java:74)
+	at org.eclipse.lsp4e.LanguageServers.lambda$24(LanguageServers.java:425)
+	at org.eclipse.lsp4e.LanguageServerWrapper.lambda$17(LanguageServerWrapper.java:877)
+	at java.base/java.util.concurrent.CompletableFuture$UniCompose.tryFire(CompletableFuture.java:1150)
+	at java.base/java.util.concurrent.CompletableFuture$Completion.run(CompletableFuture.java:482)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2025-01-08 14:40:09,444 [LS-org.eclipse.languageserver.languages.springboot#listener-1] ERROR reactor.core.publisher.Operators - Operator called default onErrorDropped
+reactor.core.Exceptions$ErrorCallbackNotImplemented: java.lang.NullPointerException: Cannot invoke "org.eclipse.lsp4j.services.LanguageServer.getWorkspaceService()" because "ls" is null
+Caused by: java.lang.NullPointerException: Cannot invoke "org.eclipse.lsp4j.services.LanguageServer.getWorkspaceService()" because "ls" is null
+	at org.springframework.ide.eclipse.boot.dash.liveprocess.DefaultLiveProcessCommandExecutor.lambda$5(DefaultLiveProcessCommandExecutor.java:54)
+	at org.eclipse.lsp4e.LanguageServers.lambda$3(LanguageServers.java:74)
+	at org.eclipse.lsp4e.LanguageServers.lambda$24(LanguageServers.java:425)
+	at org.eclipse.lsp4e.LanguageServerWrapper.lambda$17(LanguageServerWrapper.java:877)
+	at java.base/java.util.concurrent.CompletableFuture$UniCompose.tryFire(CompletableFuture.java:1150)
+	at java.base/java.util.concurrent.CompletableFuture$Completion.run(CompletableFuture.java:482)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2025-01-08 14:45:13,227 [Worker-624: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-01-08 14:45:13,235 [Worker-624: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-01-08 14:45:13,237 [Worker-624: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory D:\BANKING APP\bank\src\test\resources
+2025-01-08 14:46:10,070 [Worker-629: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-01-08 14:46:10,079 [Worker-629: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-01-08 14:46:10,083 [Worker-629: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory D:\BANKING APP\bank\src\test\resources
+2025-01-08 14:46:22,051 [Worker-626: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-01-08 14:46:22,058 [Worker-626: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-01-08 14:46:22,060 [Worker-626: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory D:\BANKING APP\bank\src\test\resources
+2025-01-08 14:46:34,827 [Worker-626: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-01-08 14:46:34,833 [Worker-626: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-01-08 14:46:34,835 [Worker-626: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory D:\BANKING APP\bank\src\test\resources
+2025-01-08 14:46:38,459 [Worker-629: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-01-08 14:46:38,467 [Worker-629: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-01-08 14:46:38,470 [Worker-629: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory D:\BANKING APP\bank\src\test\resources
+2025-01-08 14:51:21,668 [Worker-630: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-01-08 14:51:21,678 [Worker-630: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-01-08 14:51:21,681 [Worker-630: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory D:\BANKING APP\bank\src\test\resources
+2025-01-08 14:51:29,454 [Worker-630: Updating Maven Project] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update started
+2025-01-08 14:51:29,841 [Worker-630: Updating Maven Project] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.gfg:springboot3-security:0.0.1-SNAPSHOT @ D:\BANKING APP\bank\pom.xml.
+2025-01-08 14:51:31,232 [Worker-630: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /bank/src/main/java
+2025-01-08 14:51:31,232 [Worker-630: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /bank/src/main/resources
+2025-01-08 14:51:31,233 [Worker-630: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /bank/src/main/resources
+2025-01-08 14:51:31,233 [Worker-630: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /bank/src/test/java
+2025-01-08 14:51:31,233 [Worker-630: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /bank/src/test/resources
+2025-01-08 14:51:32,157 [Worker-630: Updating Maven Project] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update completed for 1 poms: local refresh takes 0.00 sec, refresh facades takes 1.00 sec, update config takes 0.00 sec 
+2025-01-08 14:51:33,097 [Worker-631: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-01-08 14:51:33,110 [Worker-631: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-01-08 14:51:33,116 [Worker-631: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory D:\BANKING APP\bank\src\test\resources
+2025-01-08 14:52:06,232 [LS-org.eclipse.languageserver.languages.springboot#listener-1] ERROR reactor.core.publisher.Operators - Operator called default onErrorDropped
+reactor.core.Exceptions$ErrorCallbackNotImplemented: java.lang.NullPointerException: Cannot invoke "org.eclipse.lsp4j.services.LanguageServer.getWorkspaceService()" because "ls" is null
+Caused by: java.lang.NullPointerException: Cannot invoke "org.eclipse.lsp4j.services.LanguageServer.getWorkspaceService()" because "ls" is null
+	at org.springframework.ide.eclipse.boot.dash.liveprocess.DefaultLiveProcessCommandExecutor.lambda$7(DefaultLiveProcessCommandExecutor.java:62)
+	at org.eclipse.lsp4e.LanguageServers.lambda$3(LanguageServers.java:74)
+	at org.eclipse.lsp4e.LanguageServers.lambda$24(LanguageServers.java:425)
+	at org.eclipse.lsp4e.LanguageServerWrapper.lambda$17(LanguageServerWrapper.java:877)
+	at java.base/java.util.concurrent.CompletableFuture$UniCompose.tryFire(CompletableFuture.java:1150)
+	at java.base/java.util.concurrent.CompletableFuture$Completion.run(CompletableFuture.java:482)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2025-01-08 14:52:18,663 [LS-org.eclipse.languageserver.languages.springboot#listener-1] ERROR reactor.core.publisher.Operators - Operator called default onErrorDropped
+reactor.core.Exceptions$ErrorCallbackNotImplemented: java.lang.NullPointerException: Cannot invoke "org.eclipse.lsp4j.services.LanguageServer.getWorkspaceService()" because "ls" is null
+Caused by: java.lang.NullPointerException: Cannot invoke "org.eclipse.lsp4j.services.LanguageServer.getWorkspaceService()" because "ls" is null
+	at org.springframework.ide.eclipse.boot.dash.liveprocess.DefaultLiveProcessCommandExecutor.lambda$5(DefaultLiveProcessCommandExecutor.java:54)
+	at org.eclipse.lsp4e.LanguageServers.lambda$3(LanguageServers.java:74)
+	at org.eclipse.lsp4e.LanguageServers.lambda$24(LanguageServers.java:425)
+	at org.eclipse.lsp4e.LanguageServerWrapper.lambda$17(LanguageServerWrapper.java:877)
+	at java.base/java.util.concurrent.CompletableFuture$UniCompose.tryFire(CompletableFuture.java:1150)
+	at java.base/java.util.concurrent.CompletableFuture$Completion.run(CompletableFuture.java:482)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2025-01-08 15:29:13,789 [Worker-645: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-01-08 15:29:13,888 [Worker-645: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-01-08 15:29:13,894 [Worker-645: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory D:\BANKING APP\bank\src\test\resources
+2025-01-08 15:29:31,973 [Worker-637: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-01-08 15:29:31,993 [Worker-637: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-01-08 15:29:31,997 [Worker-637: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory D:\BANKING APP\bank\src\test\resources
+2025-01-08 15:29:43,485 [Worker-643: Updating Maven Project] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update started
+2025-01-08 15:29:43,833 [Worker-643: Updating Maven Project] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.gfg:springboot3-security:0.0.1-SNAPSHOT @ D:\BANKING APP\bank\pom.xml.
+2025-01-08 15:29:45,572 [Worker-643: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /bank/src/main/java
+2025-01-08 15:29:45,573 [Worker-643: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /bank/src/main/resources
+2025-01-08 15:29:45,574 [Worker-643: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /bank/src/main/resources
+2025-01-08 15:29:45,574 [Worker-643: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /bank/src/test/java
+2025-01-08 15:29:45,575 [Worker-643: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /bank/src/test/resources
+2025-01-08 15:29:46,848 [Worker-643: Updating Maven Project] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update completed for 1 poms: local refresh takes 0.00 sec, refresh facades takes 2.00 sec, update config takes 0.00 sec 
+2025-01-08 15:29:47,988 [Worker-643: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-01-08 15:29:48,017 [Worker-643: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-01-08 15:29:48,026 [Worker-643: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory D:\BANKING APP\bank\src\test\resources
+2025-01-08 15:30:28,931 [LS-org.eclipse.languageserver.languages.springboot#listener-1] ERROR reactor.core.publisher.Operators - Operator called default onErrorDropped
+reactor.core.Exceptions$ErrorCallbackNotImplemented: java.lang.NullPointerException: Cannot invoke "org.eclipse.lsp4j.services.LanguageServer.getWorkspaceService()" because "ls" is null
+Caused by: java.lang.NullPointerException: Cannot invoke "org.eclipse.lsp4j.services.LanguageServer.getWorkspaceService()" because "ls" is null
+	at org.springframework.ide.eclipse.boot.dash.liveprocess.DefaultLiveProcessCommandExecutor.lambda$7(DefaultLiveProcessCommandExecutor.java:62)
+	at org.eclipse.lsp4e.LanguageServers.lambda$3(LanguageServers.java:74)
+	at org.eclipse.lsp4e.LanguageServers.lambda$24(LanguageServers.java:425)
+	at org.eclipse.lsp4e.LanguageServerWrapper.lambda$17(LanguageServerWrapper.java:877)
+	at java.base/java.util.concurrent.CompletableFuture$UniCompose.tryFire(CompletableFuture.java:1150)
+	at java.base/java.util.concurrent.CompletableFuture$Completion.run(CompletableFuture.java:482)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2025-01-08 15:30:42,468 [LS-org.eclipse.languageserver.languages.springboot#listener-1] ERROR reactor.core.publisher.Operators - Operator called default onErrorDropped
+reactor.core.Exceptions$ErrorCallbackNotImplemented: java.lang.NullPointerException: Cannot invoke "org.eclipse.lsp4j.services.LanguageServer.getWorkspaceService()" because "ls" is null
+Caused by: java.lang.NullPointerException: Cannot invoke "org.eclipse.lsp4j.services.LanguageServer.getWorkspaceService()" because "ls" is null
+	at org.springframework.ide.eclipse.boot.dash.liveprocess.DefaultLiveProcessCommandExecutor.lambda$5(DefaultLiveProcessCommandExecutor.java:54)
+	at org.eclipse.lsp4e.LanguageServers.lambda$3(LanguageServers.java:74)
+	at org.eclipse.lsp4e.LanguageServers.lambda$24(LanguageServers.java:425)
+	at org.eclipse.lsp4e.LanguageServerWrapper.lambda$17(LanguageServerWrapper.java:877)
+	at java.base/java.util.concurrent.CompletableFuture$UniCompose.tryFire(CompletableFuture.java:1150)
+	at java.base/java.util.concurrent.CompletableFuture$Completion.run(CompletableFuture.java:482)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2025-01-08 15:33:10,439 [Worker-644: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-01-08 15:33:10,461 [Worker-644: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-01-08 15:33:10,464 [Worker-644: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory D:\BANKING APP\bank\src\test\resources
+2025-01-08 15:33:20,724 [Worker-650: Updating Maven Project] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update started
+2025-01-08 15:33:21,158 [Worker-650: Updating Maven Project] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.gfg:springboot3-security:0.0.1-SNAPSHOT @ D:\BANKING APP\bank\pom.xml.
+2025-01-08 15:33:22,857 [Worker-650: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /bank/src/main/java
+2025-01-08 15:33:22,857 [Worker-650: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /bank/src/main/resources
+2025-01-08 15:33:22,857 [Worker-650: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /bank/src/main/resources
+2025-01-08 15:33:22,858 [Worker-650: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /bank/src/test/java
+2025-01-08 15:33:22,858 [Worker-650: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /bank/src/test/resources
+2025-01-08 15:33:24,026 [Worker-650: Updating Maven Project] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update completed for 1 poms: local refresh takes 0.00 sec, refresh facades takes 2.00 sec, update config takes 0.00 sec 
+2025-01-08 15:33:25,110 [Worker-649: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-01-08 15:33:25,129 [Worker-649: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-01-08 15:33:25,136 [Worker-649: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory D:\BANKING APP\bank\src\test\resources
+2025-01-08 15:33:52,392 [Worker-651: Updating Maven Project] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update started
+2025-01-08 15:33:52,845 [Worker-651: Updating Maven Project] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.gfg:springboot3-security:0.0.1-SNAPSHOT @ D:\BANKING APP\bank\pom.xml.
+2025-01-08 15:33:54,755 [Worker-651: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /bank/src/main/java
+2025-01-08 15:33:54,755 [Worker-651: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /bank/src/main/resources
+2025-01-08 15:33:54,755 [Worker-651: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /bank/src/main/resources
+2025-01-08 15:33:54,755 [Worker-651: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /bank/src/test/java
+2025-01-08 15:33:54,757 [Worker-651: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /bank/src/test/resources
+2025-01-08 15:33:56,539 [Worker-651: Updating Maven Project] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update completed for 1 poms: local refresh takes 0.00 sec, refresh facades takes 2.00 sec, update config takes 1.00 sec 
+2025-01-08 15:33:58,301 [Worker-666: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-01-08 15:33:58,340 [Worker-666: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-01-08 15:33:58,352 [Worker-666: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory D:\BANKING APP\bank\src\test\resources
+2025-01-08 15:34:04,750 [LS-org.eclipse.languageserver.languages.springboot#listener-1] ERROR reactor.core.publisher.Operators - Operator called default onErrorDropped
+reactor.core.Exceptions$ErrorCallbackNotImplemented: java.lang.NullPointerException: Cannot invoke "org.eclipse.lsp4j.services.LanguageServer.getWorkspaceService()" because "ls" is null
+Caused by: java.lang.NullPointerException: Cannot invoke "org.eclipse.lsp4j.services.LanguageServer.getWorkspaceService()" because "ls" is null
+	at org.springframework.ide.eclipse.boot.dash.liveprocess.DefaultLiveProcessCommandExecutor.lambda$7(DefaultLiveProcessCommandExecutor.java:62)
+	at org.eclipse.lsp4e.LanguageServers.lambda$3(LanguageServers.java:74)
+	at org.eclipse.lsp4e.LanguageServers.lambda$24(LanguageServers.java:425)
+	at org.eclipse.lsp4e.LanguageServerWrapper.lambda$17(LanguageServerWrapper.java:877)
+	at java.base/java.util.concurrent.CompletableFuture$UniCompose.tryFire(CompletableFuture.java:1150)
+	at java.base/java.util.concurrent.CompletableFuture$Completion.run(CompletableFuture.java:482)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2025-01-08 15:34:18,481 [LS-org.eclipse.languageserver.languages.springboot#listener-1] ERROR reactor.core.publisher.Operators - Operator called default onErrorDropped
+reactor.core.Exceptions$ErrorCallbackNotImplemented: java.lang.NullPointerException: Cannot invoke "org.eclipse.lsp4j.services.LanguageServer.getWorkspaceService()" because "ls" is null
+Caused by: java.lang.NullPointerException: Cannot invoke "org.eclipse.lsp4j.services.LanguageServer.getWorkspaceService()" because "ls" is null
+	at org.springframework.ide.eclipse.boot.dash.liveprocess.DefaultLiveProcessCommandExecutor.lambda$5(DefaultLiveProcessCommandExecutor.java:54)
+	at org.eclipse.lsp4e.LanguageServers.lambda$3(LanguageServers.java:74)
+	at org.eclipse.lsp4e.LanguageServers.lambda$24(LanguageServers.java:425)
+	at org.eclipse.lsp4e.LanguageServerWrapper.lambda$17(LanguageServerWrapper.java:877)
+	at java.base/java.util.concurrent.CompletableFuture$UniCompose.tryFire(CompletableFuture.java:1150)
+	at java.base/java.util.concurrent.CompletableFuture$Completion.run(CompletableFuture.java:482)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2025-01-08 15:36:49,881 [Worker-674: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-01-08 15:36:49,897 [Worker-674: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-01-08 15:36:49,903 [Worker-674: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory D:\BANKING APP\bank\src\test\resources
+2025-01-08 15:36:57,030 [Worker-650: Updating Maven Project] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update started
+2025-01-08 15:36:57,615 [Worker-650: Updating Maven Project] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.gfg:springboot3-security:0.0.1-SNAPSHOT @ D:\BANKING APP\bank\pom.xml.
+2025-01-08 15:36:59,389 [Worker-650: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /bank/src/main/java
+2025-01-08 15:36:59,389 [Worker-650: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /bank/src/main/resources
+2025-01-08 15:36:59,390 [Worker-650: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /bank/src/main/resources
+2025-01-08 15:36:59,390 [Worker-650: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /bank/src/test/java
+2025-01-08 15:36:59,390 [Worker-650: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /bank/src/test/resources
+2025-01-08 15:37:00,499 [Worker-650: Updating Maven Project] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update completed for 1 poms: local refresh takes 0.00 sec, refresh facades takes 2.00 sec, update config takes 0.00 sec 
+2025-01-08 15:37:01,502 [Worker-649: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-01-08 15:37:01,523 [Worker-649: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-01-08 15:37:01,533 [Worker-649: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory D:\BANKING APP\bank\src\test\resources
+2025-01-08 15:37:30,728 [LS-org.eclipse.languageserver.languages.springboot#listener-1] ERROR reactor.core.publisher.Operators - Operator called default onErrorDropped
+reactor.core.Exceptions$ErrorCallbackNotImplemented: java.lang.NullPointerException: Cannot invoke "org.eclipse.lsp4j.services.LanguageServer.getWorkspaceService()" because "ls" is null
+Caused by: java.lang.NullPointerException: Cannot invoke "org.eclipse.lsp4j.services.LanguageServer.getWorkspaceService()" because "ls" is null
+	at org.springframework.ide.eclipse.boot.dash.liveprocess.DefaultLiveProcessCommandExecutor.lambda$7(DefaultLiveProcessCommandExecutor.java:62)
+	at org.eclipse.lsp4e.LanguageServers.lambda$3(LanguageServers.java:74)
+	at org.eclipse.lsp4e.LanguageServers.lambda$24(LanguageServers.java:425)
+	at org.eclipse.lsp4e.LanguageServerWrapper.lambda$17(LanguageServerWrapper.java:877)
+	at java.base/java.util.concurrent.CompletableFuture$UniCompose.tryFire(CompletableFuture.java:1150)
+	at java.base/java.util.concurrent.CompletableFuture$Completion.run(CompletableFuture.java:482)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2025-01-08 15:37:44,363 [LS-org.eclipse.languageserver.languages.springboot#listener-1] ERROR reactor.core.publisher.Operators - Operator called default onErrorDropped
+reactor.core.Exceptions$ErrorCallbackNotImplemented: java.lang.NullPointerException: Cannot invoke "org.eclipse.lsp4j.services.LanguageServer.getWorkspaceService()" because "ls" is null
+Caused by: java.lang.NullPointerException: Cannot invoke "org.eclipse.lsp4j.services.LanguageServer.getWorkspaceService()" because "ls" is null
+	at org.springframework.ide.eclipse.boot.dash.liveprocess.DefaultLiveProcessCommandExecutor.lambda$5(DefaultLiveProcessCommandExecutor.java:54)
+	at org.eclipse.lsp4e.LanguageServers.lambda$3(LanguageServers.java:74)
+	at org.eclipse.lsp4e.LanguageServers.lambda$24(LanguageServers.java:425)
+	at org.eclipse.lsp4e.LanguageServerWrapper.lambda$17(LanguageServerWrapper.java:877)
+	at java.base/java.util.concurrent.CompletableFuture$UniCompose.tryFire(CompletableFuture.java:1150)
+	at java.base/java.util.concurrent.CompletableFuture$Completion.run(CompletableFuture.java:482)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)

@@ -1,0 +1,16 @@
+<div class="e-statement-container">
+    <h2>Download E-Statement</h2>
+    <div>
+      <label for="customerId">Enter Customer ID:</label>
+      <input
+        type="text"
+        id="customerId"
+        [(ngModel)]="customerId"
+        placeholder="Customer ID"
+      />
+      <button (click)="downloadEStatement()" class="btn btn-primary">
+        Download
+      </button>
+    </div>
+  </div>
+  

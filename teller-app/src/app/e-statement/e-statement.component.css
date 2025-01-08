@@ -1,0 +1,15 @@
+.e-statement-container {
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  .e-statement-container input {
+    margin: 10px;
+    padding: 5px;
+    width: 200px;
+  }
+  
+  .e-statement-container button {
+    margin-left: 10px;
+  }
+  

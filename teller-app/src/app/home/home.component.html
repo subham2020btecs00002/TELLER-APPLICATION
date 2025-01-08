@@ -34,7 +34,12 @@
         <h3>View Pending Transactions</h3>
         <a routerLink="/transaction/pending" class="btn btn-primary">Go</a>
       </div>
-  
+      <!-- New Card for Download E-Statement -->
+      <div *ngIf="isRole('[ROLE_AUTHORIZER]') || isRole('[ROLE_CHECKER]') || isRole('[ROLE_MAKER]')" class="card">
+        <h3>Download E-Statement</h3>
+        <a routerLink="/e-statement" class="btn btn-primary">Go</a>
+      </div>
+
       <!-- <div *ngIf="isRole('[ROLE_AUTHORIZER]')" class="card">
         <h3>Approve Transactions</h3>
         <a routerLink="/transaction/:transactionId/approve" class="btn btn-primary">Go</a>

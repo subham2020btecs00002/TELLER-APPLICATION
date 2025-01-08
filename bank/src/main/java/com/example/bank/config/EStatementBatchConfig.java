@@ -186,7 +186,7 @@ public ItemProcessor<Customer, Customer> customerItemProcessor() {
         };
     }
 
-    @Scheduled(cron = "0 17 12 * * ?") // Run on the first day of every month at midnight
+    @Scheduled(cron = "0 0 0 * * ?") // Run on the first day of every month at midnight
     public void perform() throws Exception {
         jobLauncher.run(eStatementJob(), new JobParametersBuilder()
                 .addLong("timestamp", System.currentTimeMillis())

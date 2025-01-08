@@ -102,7 +102,7 @@ public class BatchConfig {
         return transactions -> transactionRepository.saveAll(transactions);
     }
 
-    @Scheduled(cron = "0 0 0 1 * ?", zone = "Asia/Kolkata")
+    @Scheduled(cron = "0 55 8 * * ?", zone = "Asia/Kolkata")
     public void perform() throws Exception {
         jobLauncher.run(interestCalculationJob(), new JobParametersBuilder()
                 .addLong("timestamp", System.currentTimeMillis())

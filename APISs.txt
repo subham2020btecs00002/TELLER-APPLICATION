@@ -1,0 +1,126 @@
+-----------------------------------------------------------LIST OF APIS---------------------------------------------------------------------------------------
+
+
+
+
+1. EUREKA MICROSERVICE (PORT - 8761)
+
+   http://localhost:8761/
+   http://localhost:8761/
+   
+2. AUTHENTICATION MICROSERVICE (PORT - 8082)
+
+   i) http://localhost:8088/auth/addNewUser  (POST) (Three roles - MAKER,CHECKER,AUTHORIZER)
+       
+	{
+    "name": "shreyas",
+    "password": "1234",
+    "email": "sm@gmail.com",
+    "roles": "ROLE_AUTHORIZER"
+    }
+	
+	ii) http://localhost:8088/auth/generateToken (POST)
+	{
+    "username": "sm@gmail.com",
+    "password": "1234"
+    }
+	
+	iii) http://localhost:8088/auth/makerProfile (GET) (TOKEN WITH MAKER ROLE)
+	iv)  http://localhost:8088/auth/authorizerProfile (GET) (TOKEN WITH AUTHORIZER ROLE)
+	v) http://localhost:8088/auth/checkerProfile (GET) (TOKEN WITH CHECKER ROLE)
+
+3. BANK MICROSERVICE (PORT - 8083)
+
+    1. CUSTOMER APIs (USE TOKEN WITH ROLE MAKER)
+	
+	i) http://localhost:8088/api/customers (POST) (Create a CUSTOMER)
+	
+    {
+    "name": "John Doe",
+    "email": "john.doe@example.com",
+    "phoneNumber": "123-456-7890",
+    "gender": "Male",
+    "address": "123 Main St, Springfield, IL"
+    }
+	
+	2. ACCOUNT APIs (USE TOKEN WITH ROLE MAKER)
+	
+	i) http://localhost:8088/api/accounts (POST) (CREATE ACCOUNT)
+	
+	{
+    "openingBalance": 100000.00,
+    "accountNumber": "12346",
+    "customer": {
+        "customerId": 1
+    }
+    }
+	
+	ii) http://localhost:8088/api/accounts/customer/{customerId} 
+	
+	response
+	[
+    {
+        "accountId": 1,
+        "customerId": 1,
+        "customerName": "Subham Kumar",
+        "customerEmail": "subhamkumar22082001@gmail.com",
+        "customerPhoneNumber": "6209186823",
+        "customerGender": "Male",
+        "customerAddress": "Hinjewadi Phase 1, Pune",
+        "openingBalance": 10000.0,
+        "closingBalance": 16963.0,
+        "accountNumber": "12345"
+    }
+    ]
+	
+	GET ALL ACCOUNTS OF A CUSTOMER BY HIS ID
+	
+	iii) http://localhost:8088/api/accounts/{customerId}/account/{accountNumber}/balances 
+		GET THE OPENING AND CLOSING BALANCE OF A ACCOUNT
+
+	response
+	{
+    "openingBalance": 10000.0,
+    "closingBalance": 16963.0
+    }
+	
+	
+	iv) http://localhost:8088/api/accounts/number/{accountNumber} 
+	
+	GET THE ACCOUNT DETAILS BY ACCOUNT NUMBER
+	{
+    "accountId": 1,
+    "customerId": 1,
+    "customerName": "Subham Kumar",
+    "customerEmail": "subhamkumar22082001@gmail.com",
+    "customerPhoneNumber": "6209186823",
+    "customerGender": "Male",
+    "customerAddress": "Hinjewadi Phase 1, Pune",
+    "openingBalance": 10000.0,
+    "closingBalance": 16963.0,
+    "accountNumber": "12345"
+    }
+	
+	3. TRANSACTION APIs (USE TOKEN WITH ROLE AUTHORIZER/CHECKER)
+	
+	i) http://localhost:8088/api/transactions (POST) (TOKEN WITH WITH ROLE MAKER) (TRANSACTION <= 100 will be approved)
+	
+    {
+    "amount": 1000,
+    "type": "WITHDRAWAL",
+    "account": {
+    "accountId": 1
+      }
+    }
+	
+	ii) http://localhost:8088/api/transactions/pending (GET) (TOKEN WITH WITH ROLE AUTHORIZER/CHECKER)
+	
+	(GET ALL THE PENDING TRANSACTIONS)
+	
+	iii) http://localhost:8088/api/transactions/{transactionId}/approve?approve=false/true (PUT) (TOKEN WITH WITH ROLE AUTHORIZER)
+	
+	TO APPROVE/REJECT PENDING TRANSACTIONS ABOVE 1000
+	
+4. API-GATEWAY MICROSERVICE (PORT - 8088)
+
+	

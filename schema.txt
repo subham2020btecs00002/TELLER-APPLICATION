@@ -1,0 +1,18 @@
+
+
+
+
+   Customer (1) ───< Account (Many) ───< Transaction (Many)
+
+
+
+
++-------------+                +------------+                +-----------------+
+|  Customer   |                |  Account   |                |   Transaction   |
++-------------+                +------------+                +-----------------+
+| customer_id | PK         +-->| account_id | PK         +-->| transaction_id  | PK
+| name        |             |   | opening_bal|            |   | amount          |
+| email       |             |   | closing_bal|            |   | type            |
++-------------+             +---| account_num|            +---| status          |
+                                | customer_id| FK           | account_id      | FK
+                                +------------+                +-----------------+
